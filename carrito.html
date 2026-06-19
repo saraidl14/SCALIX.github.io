@@ -1,0 +1,98 @@
+
+<!--
+    Archivo: carrito.html
+    Descripción: Página de carrito de compras para la tienda en línea de Scalix.
+    Contiene la estructura HTML y enlaces a archivos CSS y JavaScript.
+    Autor: Sara Iglesias
+    Fecha: 29/03/25
+    Fecha de Modificación: [23/04/2025]
+
+
+-->
+<!--
+    Este archivo HTML representa la página del carrito de compras de un sitio web de comercio electrónico.
+    Incluye una tabla para mostrar los productos en el carrito, sus precios, cantidades y un resumen del pedido.
+    También incluye enlaces a archivos CSS y JavaScript para el estilo y la funcionalidad.
+    El diseño es responsivo y se adapta a diferentes tamaños de pantalla.
+    El menú de navegación es accesible y se puede alternar con un botón.
+    El pie de página incluye información de derechos de autor.
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="css/carrito.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="mainNav" class="nav">
+        <div class="logo"><img src="img/logo/SCALIX1.png" alt="Scalix Logo" /></div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <ul id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="animales.html">Mascotas</a></li>
+          <li><a href="comida.html">Comida</a></li>
+          <li><a href="aboutus.html">Sobre Nosotros</a></li>
+          <li><a href="carrito.html">🛒</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container"> <!-- Contenedor principal -->
+        <div class="header"> <!-- Encabezado del carrito -->
+          <span><a href="index.html">&lt; Volver</a></span> <!-- Enlace para volver a la página principal -->
+          <span>Carrito</span> <!-- Título del carrito -->
+        </div> 
+        <div class="cart-title">Tu Carrito</div> <!-- Título del carrito -->
+        <div class="table-responsive"> <!-- Contenedor para la tabla del carrito -->
+          <table id="cart-table"> <!-- Tabla del carrito -->
+            <thead>
+              <tr>
+                <th>Producto</th> <!-- Encabezado de producto -->
+                <th>Precio</th> <!-- Encabezado de precio -->
+                <th>Cantidad</th> <!-- Encabezado de cantidad -->
+                <th>Total</th>  <!-- Encabezado de total -->
+                <th>Eliminar</th> <!-- Encabezado de eliminar -->
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Contenido dinámico del carrito -->
+            </tbody>
+          </table> <!-- Tabla vacía inicialmente, se llenará con JavaScript -->
+        </div>
+        <div class="order-summary"> <!-- Resumen del pedido -->
+          <div class="summary-item"> <!-- Elemento del resumen -->
+            <label>Subtotal:</label> <!-- Etiqueta de subtotal -->
+            <span id="subtotal">0€</span> <!-- Valor inicial del subtotal -->
+          </div> 
+          <div class="summary-item"> <!-- Elemento del resumen -->
+            <label>Envío:</label> <!-- Etiqueta de envío -->
+            <span>Gratis</span> <!-- Valor del envío -->
+          </div> 
+          <div class="summary-item total">  <!-- Elemento del resumen -->
+            <label>Total:</label>   <!-- Etiqueta de total -->
+            <span id="grand-total">0€</span> <!-- Valor inicial del total -->
+          </div>
+          <button class="checkout-btn" onclick="checkout()"> <!-- Botón de finalizar compra -->
+            Finalizar Compra
+          </button>
+          <button class="checkout-btn red" onclick="clearCart()"> <!-- Botón para vaciar el carrito -->
+            Vaciar Carrito 
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <label>&copy; 2025 Scalix. Todos los derechos reservados.</label> <!-- Información de derechos de autor -->
+    </footer>
+  </body>
+  <script src="js/carrito.js"></script> <!-- Archivo JavaScript para la funcionalidad del carrito -->
+  <script src="js/responsive.js"></script> <!-- Archivo JavaScript para la responsividad del menú -->
+</html>

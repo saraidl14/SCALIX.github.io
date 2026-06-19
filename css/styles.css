@@ -1,0 +1,1183 @@
+/* === ESTILOS GENERALES === */
+* { /* Reset de márgenes y paddings */
+    margin: 0;  /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina relleno por defecto */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto total del elemento */
+}
+
+body {
+    font-family: 'Nunito', sans-serif; /* Fuente personalizada */
+    background-color: #a9deff; /* Color de fondo claro */
+    color: #2D2D2D; /* Color de texto oscuro */
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina relleno por defecto */
+}
+
+@font-face { /* Definición de la fuente personalizada */
+    font-family: 'Nunito'; /* Nombre de la fuente */
+    src: url(/fuentes/Nunito/Nunito-Regular.ttf) format('truetype'); /* Ruta de la fuente */
+}
+
+/* === HEADER Y NAVEGACIÓN === */
+header { 
+    background-color: #032C5A; /* Color de fondo oscuro */
+    padding: 15px 30px; /* Espaciado interno */
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Alineación vertical */
+    position: fixed; /* Fijo en la parte superior */
+    width: 100%; /* Ancho completo */
+    top: 0;      /* Posición en la parte superior */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+}
+.header-container { /* Contenedor para centrar el contenido */
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: space-between; /* Espacio entre elementos */
+    align-items: center; /* Alineación vertical */
+    width: 100%; /* Ancho completo */
+}
+
+.user-actions { /* Contenedor para acciones de usuario */
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Alineación vertical */
+    gap: 15px; /* Espacio entre elementos */
+} 
+
+.cart-icon { /* Icono de carrito */
+    color: white; /* Color blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 20px; /* Tamaño de fuente */
+}
+
+/* Burbuja contador carrito */
+.cart-count {
+    position: relative;
+    top: -12px;
+    left: -10px;
+    background: #a9deff;
+    color: #fff;
+    border-radius: 999px;
+    padding: 2px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    min-width: 18px;
+    text-align: center;
+}
+
+.profile-icon img { /* Icono de perfil */
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #fff;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.logo img { /* Logo */
+    height: 40px; /* Alto */
+    width: auto; /* Ancho automático */
+    display: block;     /* Bloque */
+    transition: transform 0.2s ease-in-out; /* Transición suave al escalar */
+}
+
+.logo img:hover { /* Efecto hover en el logo */
+    transform: scale(1.05); /* Escala ligeramente el logo */
+}
+
+nav ul { /* Lista de navegación */
+    list-style: none; /* Sin viñetas */
+    display: flex; /* Flexbox para alinear elementos */
+    gap: 25px;  /* Espacio entre elementos */
+    padding: 0; /* Sin relleno */
+    margin: 0;  /* Sin márgenes */
+}
+
+nav a { /* Enlaces de navegación */
+    color: white; /* Color blanco */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 16px;    /* Tamaño de fuente */
+    font-family: 'Nunito', sans-serif; /* Fuente personalizada */
+    padding: 8px 12px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background 0.3s ease; /* Transición suave al cambiar el fondo */
+}
+
+nav a:hover { /* Efecto hover en enlaces */
+    background: rgba(138, 207, 58, 0.6);    /* Fondo al pasar el ratón */
+}
+
+/* === USUARIO Y MENÚ DESPLEGABLE === */
+.user-menu { /* Menú de usuario */
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Alineación vertical */
+    cursor: pointer; /* Cursor de puntero */
+    font-family: 'Nunito', sans-serif; /* Fuente personalizada */
+}
+
+.user-menu img { /* Imagen de usuario */
+    width: 30px; /* Ancho */
+    height: 30px; /* Alto */
+    border-radius: 50%; /* Redondeado */
+    background-color: #fff; /* Fondo blanco */
+    transition: transform 0.2s; /* Transición suave al escalar */
+}
+
+.user-menu img:hover { /* Efecto hover en imagen de usuario */
+    transform: scale(1.1);  /* Escala ligeramente la imagen */
+}
+
+/* === SECCIÓN HERO === */
+.hero { /* Sección principal */
+    text-align: center; /* Alineación centrada */
+    padding: 120px 20px 80px; /* Espaciado interno */
+    background: #032C5A;  /* El color oscuro de fondo */
+    color: white; /* Color de texto blanco */
+    position: relative;  /* Importante para que el wave-divider se posicione correctamente */
+    overflow: hidden;    /* Mantiene el contenido dentro de los límites */
+}
+
+.hero h1 { /* Título principal */
+    font-size: 36px; /* Tamaño de fuente */
+    margin-bottom: 15px; /* Espacio inferior */
+    color: #6B8DB8; /* Color de texto */
+    font-weight: 700; /*tamaño de fuente */
+}
+
+.hero p { /* Descripción */
+    color: white; /* Color de texto blanco */
+    margin-bottom: 30px; /* Espacio inferior */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+.categorias { /* Sección de categorías */
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: center; /* Alineación centrada */
+    gap: 30px; /* Espacio entre elementos */
+    margin-top: 30px; /* Espacio superior */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+}
+
+.categoria { /* Elemento de categoría */
+    width: 120px; /* Ancho */
+    height: 120px; /* Alto */
+    border-radius: 50%; /* Bordes redondeados */
+    overflow: hidden;   /* Mantiene el contenido dentro de los límites */
+    position: relative; /* Posicionamiento relativo para el texto */
+    box-shadow: 0 0 15px rgba(36, 105, 255, 0.6); /* Sombra para profundidad */
+    transition: transform 0.3s ease; /* Transición suave al escalar */
+    text-decoration: none; /* Sin subrayado */
+    display: block; /* Bloque para que ocupe todo el ancho */
+}
+
+.categoria img { /* Imagen de categoría */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+}
+
+.categoria-label { /* Etiqueta de categoría */
+    position: absolute; /* Posicionamiento absoluto */
+    bottom: 15px; /* Espacio inferior */
+    left: 0; /* Espacio izquierdo */
+    right: 0; /* Espacio derecho */
+    text-align: center;     /* Alineación centrada */
+    color: white; /* Color de texto blanco */
+    font-weight: bold; /*Tipo de fuente */
+    font-size: 16px; /* Tamaño de fuente */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Sombra de texto para mejor legibilidad */
+}
+
+.categoria:hover {
+    transform: scale(1.05);
+}
+
+/* Forma ondulada para separar el hero */
+.wave-divider {
+    position: absolute;
+    bottom: -1px;  /* Ajustado para eliminar cualquier espacio */
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 10;  /* Aseguramos que esté por encima de otros elementos */
+}
+
+.wave-divider svg { /* SVG de la ola */
+    position: relative; /* Posicionamiento relativo */
+    display: block; /* Bloque para ocupar todo el ancho */
+    width: calc(100% + 1.3px); /* Ancho completo más un pequeño ajuste */
+    height: 80px;
+    fill: #a9deff;  /* Color de la ola (mismo que fondo de la página) */
+    transform: scaleY(-1); /* Esto voltea la ola verticalmente */
+}
+
+/* === SECCIÓN DE OFERTAS === */
+.ofertas { /* Sección de ofertas */
+    text-align: center; /* Alineación centrada */
+    padding: 60px 20px; /* Espaciado interno */
+    background-color: #a9deff; /* Color de fondo claro */
+}
+
+.ofertas h2 { /* Título de ofertas */
+    font-size: 32px; /* Tamaño de fuente */
+    color: #6B8DB8; /* Color de texto */
+    margin-bottom: 10px; /* Espacio inferior */
+    font-weight: 700; /* Tipo de fuente */
+}
+
+.ofertas p { /* Descripción de ofertas */
+    font-size: 16px; /* Tamaño de fuente */
+    color: #3868a0; /* Color de texto */
+    margin-bottom: 40px; /* Espacio inferior */
+}
+
+.productos { /* Sección de productos */
+    display: flex; /* Flexbox para alinear elementos */
+    justify-content: center; /* Alineación centrada */
+    gap: 20px; /* Espacio entre elementos */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    position: relative; /* Posicionamiento relativo para los controles del slider */
+} 
+
+.producto { /* Elemento de producto */
+    background: white;
+    padding: 0;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.3s;
+}
+
+.producto img { /* Imagen de producto */
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+}
+
+.producto-info { /* Información del producto */
+    padding: 15px; 
+    text-align: left;
+}
+
+.producto-title { /* Título del producto */
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.producto-subtitle { /* Subtítulo del producto */
+    font-size: 12px;
+    color: #3868a0;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.producto-footer { /* Pie de producto */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.producto-dot { /* Punto de color */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot-green { /* Punto verde */
+    background-color: #A4E57C;
+}
+
+.dot-blue { /* Punto azul */
+    background-color: #1E90FF;
+}
+
+.dot-orange { /* Punto naranja */
+    background-color: #FF8C00;
+}
+
+.producto-price { /* Precio del producto */
+    font-weight: bold; 
+    color: #6B8DB8;
+}
+
+.producto:hover { /* Efecto hover en producto */
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slider-controls { /* Controles del slider */
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+    pointer-events: none;
+}
+
+.slider-control { /* Control del slider */
+    background: rgba(255,255,255,0.7);
+    border: none; /* Sin borde */
+    width: 30px; /* Ancho */
+    height: 30px; /* Alto */
+    border-radius: 50%;
+    display: flex; /* Flexbox para alinear elementos */
+    align-items: center; /* Alineación centrada */
+    justify-content: center; /* Alineación centrada */
+    cursor: pointer; /* Cursor de puntero */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra para profundidad */
+    pointer-events: auto; /* Permitir eventos de puntero */
+}
+
+/* === SECCIÓN DE CONTACTO === */
+.contacto { /* Sección de contacto */
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #a9deff;
+}
+
+.contacto h2 {  /* Título de contacto */
+    font-size: 32px;
+    color: #6B8DB8;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.contacto p { /* Descripción de contacto */
+    font-size: 16px;
+    color: #3868a0;
+    margin-bottom: 5px;
+}
+
+.contacto-info { /* Información de contacto */
+    font-size: 14px;
+    color: #3868a0;
+    margin-bottom: 30px;
+}
+
+.contacto-opciones { /* Opciones de contacto */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contacto-opcion { /* Opción de contacto */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 180px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+}
+
+.contacto-opcion h4 { /* Título de opción de contacto */
+    font-size: 16px;
+    color: #3868a0;
+    margin-bottom: 5px;
+}
+
+.contacto-opcion p { /* Descripción de opción de contacto */
+    font-size: 12px; 
+    color: #3868a0;
+    margin-bottom: 15px;
+}
+
+.contacto-btn { /* Botón de contacto */
+    background: #63A69F;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold; /* Tipo de fuente */
+    transition: background 0.3s, transform 0.2s; /* Transición suave */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Bloque en línea para ocupar solo el espacio necesario */
+}
+
+.contacto-btn.whatsapp { /* Botón de WhatsApp */
+    background: #25D366;
+}
+
+.contacto-btn.llamada { /* Botón de llamada */
+    background: #63A69F;
+}
+
+.contacto-btn:hover { /* Efecto hover en botón */
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* === FOOTER === */
+footer { /* Pie de página */
+    text-align: center; /* Alineación centrada */
+    padding: 25px;   /* Espaciado interno */
+    background: #032C5A; /* Color de fondo oscuro */
+    color: white; /* Color de texto blanco */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+    /* Menú hamburguesa para móviles */
+    .menu-toggle { /* Botón de menú */
+        display: none; /* Oculto por defecto */
+        background: none; /* Sin fondo */
+        border: none; /* Sin borde */
+        color: white; /* Color blanco */
+        font-size: 24px; /* Tamaño de fuente */
+        cursor: pointer; /* Cursor de puntero */
+    }
+    
+    /* === SECCIÓN DE CARRUSEL === */
+    .carrusel { /* Sección de carrusel */
+        text-align: center; /* Alineación centrada */
+        padding: 60px 20px; /* Espaciado interno */
+        background-color: #032C5A; /* Color de fondo oscuro */
+        color: white; /* Color de texto blanco */
+    }
+
+    .carrusel h2 { /* Título de carrusel */
+        font-size: 32px; /* Tamaño de fuente */
+        color: #6B8DB8; /* Color de texto */
+        margin-bottom: 10px;    /* Espacio inferior */
+        font-weight: 700;   /* Tipo de fuente */
+    }
+
+    .carrusel label { /* Etiqueta de carrusel */    
+        font-size: 16px; /* Tamaño de fuente */
+        color: white; /* Color de texto blanco */
+        margin-bottom: 40px; /* Espacio inferior */
+        display: block; /* Bloque para ocupar todo el ancho */
+    }
+
+    .carrusel-container { /* Contenedor de carrusel */
+        position: relative; /* Posicionamiento relativo */
+        max-width: 900px; /* Ancho máximo */
+        margin: 40px auto 0; /* Margen superior e inferior */
+        overflow: hidden; /* Mantiene el contenido dentro de los límites */
+    } 
+
+    .carrusel-wrapper { /* Contenedor del carrusel */
+        display: flex; /* Flexbox para alinear elementos */
+        transition: transform 0.5s ease; /* Transición suave al mover */
+    }
+
+    .carrusel-item { /* Elemento del carrusel */
+        min-width: 100%; /* Ancho mínimo */
+        padding: 0 15px; /* Espaciado interno */
+        box-sizing: border-box; /* Incluye el padding en el ancho total */
+    }
+
+    .carrusel-item img { /* Imagen del carrusel */
+        width: 100%; /* Ancho completo */
+        height: 400px; /* Alto */
+        object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+        border-radius: 12px; /* Bordes redondeados */
+        box-shadow: 0 0 20px rgba(21, 45, 255, 0.4); /* Sombra para profundidad */
+    }
+
+    .carrusel-caption { /* Leyenda del carrusel */
+        margin-top: 15px; /* Espacio superior */
+        font-size: 18px; /* Tamaño de fuente */
+        font-weight: bold; /* Tipo de fuente */
+        color: white; /* Color de texto blanco */
+    }
+
+    .carrusel-controls { /* Controles del carrusel */
+        position: absolute; /* Posicionamiento absoluto */
+        top: 50%; /* Centro vertical */
+        width: 100%; /* Ancho completo */
+        display: flex; /* Flexbox para alinear elementos */
+        justify-content: space-between;     /* Espacio entre elementos */
+        transform: translateY(-50%); /* Centrado vertical */
+        padding: 0 10px; /* Espaciado interno */
+        pointer-events: none; /* Desactiva eventos de puntero */
+    }
+
+    .carrusel-control {  /* Control del carrusel */
+        background: rgba(255,255,255,0.7); /* Fondo blanco semitransparente */
+        border: none; /* Sin borde */
+        width: 40px; /* Ancho */
+        height: 40px;    /* Alto */
+        border-radius: 50%; /* Bordes redondeados */
+        display: flex; /* Flexbox para alinear elementos */
+        align-items: center;
+        justify-content: center;
+        cursor: pointer; /* Cursor de puntero */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Sombra para profundidad */
+        pointer-events: auto; /* Permitir eventos de puntero */
+        font-size: 20px; /* Tamaño de fuente */
+    }
+
+    .carrusel-control:hover { /* Efecto hover en control */
+        background: rgba(255,255,255,0.9);
+    }
+
+    .carrusel-indicators { /* Indicadores del carrusel */
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .carrusel-indicator { /* Indicador del carrusel */
+        width: 12px;
+        height: 12px;
+        background: rgba(255,255,255,0.5);  /* Fondo blanco semitransparente */
+        border-radius: 50%; /* Bordes redondeados */
+        cursor: pointer; /* Cursor de puntero */
+        transition: background 0.3s ease; /* Transición suave */
+    }
+
+    .carrusel-indicator.active { /* Indicador activo */
+        background: #6B8DB8;
+    }
+
+    /* Media queries para el carrusel */
+    
+    /* === RESPONSIVE DESIGN === */
+    @media (max-width: 1024px) { /* Estilos para tablets y móviles */
+        /* === ESTILOS PARA TABLETS (768px-1024px) === */
+        
+        /* Navegación */
+        nav ul {    
+            gap: 15px; /* Espacio entre elementos */
+        }
+        
+        nav ul li a {  /* Enlaces de navegación */
+            font-size: 15px; /* Tamaño de fuente */
+            padding: 8px 12px; /* Espaciado interno */
+        }
+        
+        /* Header */
+        header { /* Encabezado */
+            padding: 12px 20px; /* Espaciado interno */
+        }
+        
+        .logo { /* Logo */
+            font-size: 26px;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 120px 30px 60px;
+        }
+        
+        .hero h1 {
+            font-size: 32px;
+        }
+        
+        .hero p {
+            font-size: 16px;
+            max-width: 80%;
+            margin: 0 auto 25px;
+        }
+        
+        .btn {
+            padding: 10px 18px;
+            font-size: 15px;
+        }
+        
+        /* Categorías */
+        .categorias {
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .categoria {
+            width: 120px;
+            height: 120px;
+        }
+        
+        .categoria-label {
+            font-size: 15px;
+        }
+        
+        /* Productos */
+        .productos {
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .producto {
+            width: 45%;
+            margin-bottom: 25px;
+        }
+        
+        .producto-img {
+            height: 180px;
+        }
+        
+        .producto-info h3 {
+            font-size: 18px;
+        }
+        
+        .producto-precio {
+            font-size: 17px;
+        }
+        
+        /* Ofertas */
+        .ofertas {
+            padding: 50px 30px;
+        }
+        
+        .ofertas h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+        
+        /* Carrusel */
+        .carrusel-item img {
+            height: 350px;
+        }
+        
+        .carrusel-caption {
+            font-size: 18px;
+        }
+        
+        .carrusel-control {
+            width: 35px;
+            height: 35px;
+            font-size: 18px;
+        }
+        
+        /* Contacto */
+        .contacto {
+            padding: 50px 30px;
+        }
+        
+        .contacto h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+        
+        .contacto-opciones {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+        
+        .contacto-opcion {
+            width: 45%;
+            padding: 20px;
+        }
+        
+        .contacto-opcion h3 {
+            font-size: 18px;
+        }
+        
+        .contacto-opcion p {
+            font-size: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 30px 20px;
+        }
+        
+        .footer-links {
+            gap: 25px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+        }
+        
+        .footer-column a, .footer-column p {
+            font-size: 14px;
+        }
+        
+        /* Wave divider */
+        .wave-divider svg {
+            height: 50px;
+        }
+        
+        /* Formulario */
+        form input, form textarea {
+            padding: 10px;
+            font-size: 15px;
+        }
+        
+        /* Menú desplegable */
+        .dropdown-menu {
+            width: 180px;
+        }
+        
+        .dropdown-menu a {
+            padding: 10px 15px;
+            font-size: 15px;
+        }
+        
+        /* Elementos específicos para tablet */
+        .tablet-only {
+            display: block;
+        }
+        
+        /* Ajustes para layout de scroll horizontal en tablets */
+        .scroll-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 15px;
+        }
+        
+        /* Breadcrumbs */
+        .breadcrumbs {
+            font-size: 14px;
+            padding: 10px 30px;
+        }
+        
+        /* Botones flotantes */
+        .floating-btn {
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+        }
+        
+        /* === ESTILOS PARA MÓVILES (máx 768px) === */
+        @media (max-width: 768px) {
+            /* Navegación */
+            nav ul {
+                display: none;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav.active ul {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background-color: #161B0C;
+                padding: 10px 0;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            nav ul li {
+                margin: 0;
+                text-align: center;
+                width: 100%;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 12px 15px;
+            }
+            
+            /* Header */
+            header {
+                padding: 10px 15px;
+            }
+            
+            .logo {
+                font-size: 24px;
+            }
+        }
+    }
+
+
+@media (max-width: 768px) {
+    /* Navegación */
+    nav ul {
+        display: none;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav.active ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #161B0C;
+        padding: 10px 0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    nav ul li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 12px 15px;
+    }
+    
+    /* Header */
+    header {
+        padding: 10px 15px;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+    
+    .user-menu {
+        right: 15px;
+    }
+    
+    /* Menú desplegable */
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 12px 20px;
+        text-decoration: none;
+        color: #6B8DB8;
+    }
+
+    .dropdown-menu a:hover {
+        background-color: #f5f5f5;
+    }
+    
+    /* Elementos autenticados */
+    .auth-only {
+        display: none;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: 100px 15px 40px;
+    }
+    
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    .categorias {
+        gap: 15px;
+    }
+    
+    .categoria {
+        width: 100px;
+        height: 100px;
+    }
+    
+    /* Contacto */
+    .contacto-opciones {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contacto-opcion {
+        width: 80%;
+    }
+    
+    /* Carrusel */
+    .carrusel-item img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Producto */
+    .producto {
+        width: 90%;
+        max-width: 280px;
+        margin-bottom: 20px;
+    }
+    
+    /* Categorías */
+    .categoria {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .categoria-label {
+        font-size: 14px;
+    }
+    
+    /* Productos */
+    .productos {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .slider-controls {
+        display: none; /* Ocultar controles de slider en móviles muy pequeños */
+    }
+    
+    /* Hero */
+    .hero h1 {
+        font-size: 24px;
+    }
+    
+    .hero {
+        padding: 90px 10px 30px;
+    }
+    
+    .wave-divider svg {
+        height: 40px; /* Ola más pequeña en móviles */
+    }
+    
+    /* Secciones */
+    .ofertas, .contacto {
+        padding: 40px 15px;
+    }
+    
+    .ofertas h2, .contacto h2 {
+        font-size: 26px;
+    }
+    
+    /* Menú desplegable para móviles */
+    .dropdown-menu {
+        position: absolute;
+        top: 50px;
+        right: 30px;
+        background-color: #161B0C;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        min-width: 150px;
+    }
+    
+    .dropdown-menu a {
+        padding: 12px 20px;
+        color: white;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .dropdown-menu a:last-child {
+        border-bottom: none;
+    }
+    
+    .dropdown-menu a:hover {
+        background-color: rgba(138, 207, 58, 0.6);
+    }
+    
+    /* Carrusel */
+    .carrusel-item img {
+        height: 200px;
+    }
+    
+    .carrusel-caption {
+        font-size: 16px;
+    }
+    
+    .carrusel-control {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}
+
+/* === ESTILOS ESPECÍFICOS PARA TABLET === */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Navegación */
+    nav ul {
+        gap: 15px;
+    }
+    
+    nav ul li a {
+        font-size: 15px;
+        padding: 8px 12px;
+    }
+    
+    /* Header */
+    header {
+        padding: 12px 20px;
+    }
+    
+    .logo {
+        font-size: 26px;
+    }
+    
+    /* Hero */
+    .hero {
+        padding: 120px 30px 60px;
+    }
+    
+    .hero h1 {
+        font-size: 32px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+        max-width: 80%;
+        margin: 0 auto 25px;
+    }
+    
+    .btn {
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+    
+    /* Categorías */
+    .categorias {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .categoria {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .categoria-label {
+        font-size: 15px;
+    }
+    
+    /* Productos */
+    .productos {
+        justify-content: center;
+        gap: 20px;
+    }
+    
+    .producto {
+        width: 45%;
+        margin-bottom: 25px;
+    }
+    
+    .producto-img {
+        height: 180px;
+    }
+    
+    .producto-info h3 {
+        font-size: 18px;
+    }
+    
+    .producto-precio {
+        font-size: 17px;
+    }
+    
+    /* Ofertas */
+    .ofertas {
+        padding: 50px 30px;
+    }
+    
+    .ofertas h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    
+    /* Carrusel */
+    .carrusel-item img {
+        height: 350px;
+    }
+    
+    .carrusel-caption {
+        font-size: 18px;
+    }
+    
+    .carrusel-control {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    
+    /* Contacto */
+    .contacto {
+        padding: 50px 30px;
+    }
+    
+    .contacto h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    
+    .contacto-opciones {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+    }
+    
+    .contacto-opcion {
+        width: 45%;
+        padding: 20px;
+    }
+    
+    .contacto-opcion h3 {
+        font-size: 18px;
+    }
+    
+    .contacto-opcion p {
+        font-size: 15px;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 30px 20px;
+    }
+    
+    .footer-links {
+        gap: 25px;
+    }
+    
+    .footer-column h3 {
+        font-size: 18px;
+    }
+    
+    .footer-column a, .footer-column p {
+        font-size: 14px;
+    }
+    
+    /* Wave divider */
+    .wave-divider svg {
+        height: 50px;
+    }
+    
+    /* Formulario */
+    form input, form textarea {
+        padding: 10px;
+        font-size: 15px;
+    }
+    
+    /* Menú desplegable */
+    .dropdown-menu {
+        width: 180px;
+    }
+    
+    .dropdown-menu a {
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+    
+    /* Elementos específicos para tablet */
+    .tablet-only {
+        display: block;
+    }
+    
+    /* Ajustes para layout de scroll horizontal en tablets */
+    .scroll-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 15px;
+    }
+    
+    /* Breadcrumbs */
+    .breadcrumbs {
+        font-size: 14px;
+        padding: 10px 30px;
+    }
+    
+    /* Botones flotantes */
+    .floating-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}

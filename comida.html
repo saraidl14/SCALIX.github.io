@@ -1,0 +1,79 @@
+
+<!--
+    Archivo: comida.html
+    Descripción: Página de alimentos para mascotas exóticas de Scalix.
+    Contiene un menú de navegación, una barra lateral para categorías de alimentos y un contenedor principal para mostrar los productos.
+    Autor: Sara Iglesias
+    Fecha: [Fecha de creación]
+    versión: 1.0
+    Fecha de modificación: [23/04/2025]
+
+-->
+
+<!--
+    Este es un archivo HTML que representa la página de alimentos para mascotas exóticas de Scalix.
+    Contiene una estructura básica con un encabezado, un menú de navegación, una barra lateral para categorías de alimentos,
+    y un contenedor principal para mostrar los productos.
+    El diseño es responsivo y se adapta a diferentes tamaños de pantalla.
+    Incluye enlaces a archivos CSS y JavaScript para el estilo y la funcionalidad.-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración de la vista para dispositivos móviles -->
+    <title>Scalix - Alimento para Mascotas Exóticas</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="css/comida.css"> <!-- Enlace al archivo CSS para estilos -->
+</head>
+<body>
+    <header class="header"> <!-- Encabezado de la página -->
+        <div class="logo"><img src="img/logo/SCALIX1.png" alt="Scalix Logo" /></div>  <!-- Logo de la tienda -->
+        <div class="menu-toggle" id="menuToggle">☰</div> <!-- Botón para alternar el menú en dispositivos móviles -->
+        <nav id="mainNav"> <!-- Menú de navegación -->
+            <a href="index.html">Home</a> <!-- Enlace a la página principal -->
+            <a href="animales.html">Mascotas</a> <!-- Enlace a la página de mascotas -->
+            <a href="comida.html" class="active">Comida</a>  <!-- Enlace a la página de comida -->
+            <a href="aboutus.html">Sobre Nosotros</a>   <!-- Enlace a la página "Sobre Nosotros" -->
+        </nav>
+        <div class="user-actions"> <!-- Acciones del usuario -->
+            <a href="carrito.html" class="cart-icon">🛒</a> <!-- Enlace al carrito -->
+            <span class="cart-count">0</span> <!-- Contador de artículos en el carrito -->
+            <a href="#" class="profile-icon">
+                <img src="img/profile.jpg" alt="usuario" id="userMenuBtn">
+            </a>
+        </div>
+    </header>
+
+    <div class="container"> <!-- Contenedor principal -->
+        <aside class="sidebar"> <!-- Barra lateral para categorías de alimentos -->
+            <h2>Alimentación</h2> <!-- Título de la barra lateral -->
+            <ul id="foodCategories"> <!-- Lista de categorías de alimentos -->
+                <li class="active">Todos los productos</li> <!-- Categoría activa --> 
+                <li>Insectos vivos</li> <!-- Categoría de insectos vivos -->
+                <li>Piensos</li> <!-- Categoría de piensos --> 
+                <li>Vitaminas y suplementos</li> <!-- Categoría de vitaminas y suplementos --> 
+                <li>Alimentos congelados</li> <!-- Categoría de alimentos congelados --> 
+                <li>Alimentos especiales</li> <!-- Categoría de alimentos especiales --> 
+            </ul>
+        </aside>
+        
+        <main class="content"> <!-- Contenido principal de la página -->
+            <h1 class="page-title">Alimentos</h1> <!-- Título de la página -->
+            
+            <div class="products-grid" id="productsContainer">
+                <!-- Los productos se cargarán dinámicamente desde JavaScript -->
+            </div>
+            
+        </main>
+    </div>
+    
+    <script src="js/comida.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/responsive.js"></script>
+    <script src="js/favoritos.js"></script>
+</body>
+<footer class="footer">
+    <label>© 2025 Scalix - Animales Exóticos. Todos los derechos reservados.</label>
+</footer>
+</html>

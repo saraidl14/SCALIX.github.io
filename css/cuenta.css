@@ -1,0 +1,415 @@
+/* Estilos base */
+body {
+    font-family: 'Nunito', Arial, sans-serif;
+    background: #f5f5f5;
+    color: #6B8DB8;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url(/fuentes/Nunito/Nunito-Regular.ttf) format('truetype');
+}
+
+/* Encabezados responsive */
+h1 {
+    font-size: clamp(40px, 8vw, 96px);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: clamp(32px, 6vw, 64px);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+h3 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+h4 {
+    font-size: clamp(22px, 4vw, 36px);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: clamp(18px, 3vw, 24px);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
+h6 {
+    font-size: clamp(16px, 2.5vw, 20px);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+}
+
+p {
+    font-size: clamp(14px, 1.5vw, 16px);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+}
+
+/* Contenedor principal con responsive */
+.account-container {
+    display: flex;
+    flex-direction: row;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 90%;
+    max-width: 1000px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 40px auto;
+}
+
+/* Sidebar con responsive */
+.sidebar {
+    width: 30%;
+    background: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-img {
+    width: clamp(60px, 8vw, 80px);
+    height: clamp(60px, 8vw, 80px);
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #6B8DB8;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: clamp(14px, 1.5vw, 16px);
+}
+
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+    background: #161B0C;
+    color: white;
+}
+
+/* Contenido principal */
+.account-settings {
+    flex-grow: 1;
+    padding: clamp(20px, 5vw, 40px);
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: clamp(14px, 1.5vw, 16px);
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: clamp(14px, 1.5vw, 16px);
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: clamp(14px, 1.5vw, 16px);
+}
+
+.btn.primary {
+    background: #161B0C;
+    color: white;
+}
+
+.btn.secondary {
+    background: #ccc;
+}
+
+.logout-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: clamp(8px, 2vw, 10px) clamp(10px, 2vw, 15px);
+    margin-top: 20px;
+    width: 100%;
+    cursor: pointer;
+    font-size: clamp(14px, 1.5vw, 16px);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Estilos responsivos para la página de productos */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: clamp(10px, 2vw, 20px);
+    padding: clamp(10px, 2vw, 20px);
+    margin: clamp(10px, 2vw, 20px);
+}
+
+.producto {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
+.producto h2 {
+    font-size: clamp(18px, 2.5vw, 24px);
+    margin: 10px 0 5px;
+}
+
+.producto p {
+    margin: 5px 0;
+}
+
+/* Estilos responsivos para el modal */
+.modal-content {
+    width: 90%;
+    max-width: 800px;
+    margin: 5% auto;
+    padding: clamp(15px, 3vw, 20px);
+    max-height: 90vh;
+}
+
+.animal-details {
+    flex-direction: column;
+}
+
+.animal-image {
+    min-width: 100%;
+    margin-bottom: 20px;
+}
+
+.animal-info {
+    min-width: 100%;
+}
+
+.tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+}
+
+.tab {
+    font-size: clamp(12px, 1.5vw, 16px);
+    padding: clamp(6px, 1.5vw, 10px) clamp(8px, 2vw, 15px);
+}
+
+/* Media queries para diferentes tamaños de pantalla */
+@media (min-width: 768px) {
+    .animal-details {
+        flex-direction: row;
+    }
+    
+    .animal-image {
+        min-width: 300px;
+        margin-bottom: 0;
+    }
+    
+    .animal-info {
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 767px) {
+    .account-container {
+        flex-direction: column;
+        width: 95%;
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+    
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .sidebar ul li {
+        margin: 5px;
+    }
+    
+    .sidebar ul li a {
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-productos {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 2% auto;
+        padding: 15px;
+    }
+    
+    .tab {
+        padding: 5px 8px;
+        font-size: 12px;
+    }
+    
+    .store-location {
+        padding: 8px;
+    }
+}
+
+/* Estilos para la navegación responsiva */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: clamp(40px, 8vw, 60px);
+    width: auto;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+header nav ul li {
+    margin: 0 clamp(5px, 1vw, 10px);
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #6B8DB8;
+    padding: 10px;
+    font-size: clamp(14px, 1.5vw, 16px);
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: #2c7a54;
+}
+
+/* Menú hamburguesa para móviles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: #6B8DB8;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    header nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: white;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    header nav ul.active {
+        max-height: 300px;
+    }
+    
+    header nav ul li {
+        margin: 0;
+        width: 100%;
+    }
+    
+    header nav ul li a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+    }
+}
+
+/* Footer responsivo */
+footer { /* Pie de página */
+    text-align: center; /* Alineación centrada */
+    padding: 25px;   /* Espaciado interno */
+    background: #032C5A; /* Color de fondo oscuro */
+    color: white; /* Color de texto blanco */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+footer p {
+    margin: 0;
+    font-size: clamp(12px, 1.5vw, 14px);
+}

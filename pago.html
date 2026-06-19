@@ -1,0 +1,334 @@
+<!--
+Archivo: pago.html
+Descripción: Página de pago para la tienda online "Scalix
+Autor: Sara Iglesias
+Fecha: 29/03/25
+versión: 1.0
+Fecha de Modificación: [23/04/2025]
+-->
+
+<!-- Este documento Html representa la página de pago de un sitio web de comercio electrónico.
+    Incluye un formulario para que los usuarios ingresen su información de pago y envío. 
+    El diseño es responsivo y se adapta a diferentes tamaños de pantalla.
+    Incluye enlaces a archivos CSS y JavaScript para el estilo y la funcionalidad.
+    El menú de navegación es accesible y se puede alternar con un botón.
+    El pie de página incluye información de derechos de autor.
+-->
+
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración de la vista para dispositivos móviles -->
+    <title>Scalix - Pago</title> <!-- Título de la página -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet"> <!-- Enlace a Google Fonts para la fuente Nunito -->
+    <link rel="stylesheet" href="css/pago.css"> <!-- Enlace al archivo CSS para estilos -->
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="img/logo/SCALIX1S.png" alt="Scalix Logo" /></div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <nav id="mainNav" class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="animales.html">Mascotas</a></li>
+                <li><a href="comida.html">Comida</a></li>
+                <li><a href="aboutus.html">Sobre Nosotros</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="carrito.html" class="cart-icon">🛒</a>
+            <span class="cart-count">0</span>
+            <a href="#" class="profile-icon">
+                <img src="img/profile.jpg" alt="usuario" id="userMenuBtn">
+            </a>
+        </div>
+    </header>
+    
+    <div class="content"> <!-- Contenido principal de la página -->
+        <h1 class="page-title">Finalizar Compra</h1> <!-- Título de la página -->
+        <!--Invencion de la pagina de pago-->
+        <div class="payment-container"> <!-- Contenedor del formulario de pago -->
+            <!-- Resumen del carrito -->
+            <div class="cart-summary"> 
+                <h2 class="cart-title">Resumen del Pedido</h2> <!-- Título del resumen del pedido -->
+                
+                <div class="cart-items">
+                    <!-- Producto 1 -->
+                    <div class="cart-item"> 
+                        <div class="cart-item-image"> <!-- Imagen del producto -->
+                            <img src="img/mascotas/reptiles/geckos/gecko crestado dalmatian red.jpg" alt="gecko crestado"> <!-- Imagen del producto -->
+                        </div>
+                        <div class="cart-item-details"> <!-- Detalles del producto -->
+                            <h3 class="cart-item-name">Gecko Crestado</h3> <!-- Nombre del producto -->
+                            <label class="cart-item-price">€120</label> <!-- Precio del producto -->
+                            <div class="cart-item-quantity"> <!-- Cantidad del producto -->
+                                <button onclick="updateQuantity(this, -1)">-</button> <!-- Botón para disminuir la cantidad -->
+                                <span class="quantity-value">1</span> <!-- Valor de la cantidad -->
+                                <button onclick="updateQuantity(this, 1)">+</button> <!-- Botón para aumentar la cantidad -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Producto 2 -->
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="img/terrario.jpg" alt="Terrario Tropical">
+                        </div>
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-name">Terrario Tropical Grande</h3>
+                            <label class="cart-item-price">€75</label>
+                            <div class="cart-item-quantity">
+                                <button onclick="updateQuantity(this, -1)">-</button>
+                                <span class="quantity-value">1</span>
+                                <button onclick="updateQuantity(this, 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Producto 3 -->
+                    <div class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="img/alimento/mezcla.jpg" alt="Alimento para Gecko">
+                        </div>
+                        <div class="cart-item-details">
+                            <h3 class="cart-item-name">Alimento Premium para Gecko</h3>
+                            <label class="cart-item-price">€15</label>
+                            <div class="cart-item-quantity">
+                                <button onclick="updateQuantity(this, -1)">-</button>
+                                <span class="quantity-value">2</span>
+                                <button onclick="updateQuantity(this, 1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cart-summary-totals"> <!-- Totales del resumen del carrito -->
+                    <div class="cart-row">  <!-- Fila de totales -->
+                        <span>Subtotal:</span> <!-- Etiqueta de subtotal -->
+                        <span>€225</span> <!-- Valor del subtotal -->
+                    </div>
+                    <div class="cart-row"> <!-- Fila de IVA -->
+                        <span>IVA (21%):</span> <!-- Etiqueta de IVA -->
+                        <span>€47.25</span> <!-- Valor del IVA -->
+                    </div> 
+                    <div class="cart-row"> <!-- Fila de envío -->
+                        <span>Envío:</span> <!-- Etiqueta de envío -->
+                        <span>€00</span> <!-- Valor del envío -->
+                    </div>
+                    <div class="cart-row cart-total"> <!-- Fila de total -->
+                        <span>Total:</span> <!-- Etiqueta de total -->
+                        <span>€282.25</span>    <!-- Valor total del pedido -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Formulario de pago -->
+            <div class="payment-form-container">
+                <h2 class="form-title">Información de Pago</h2>
+                
+                <form id="payment-form">
+                    <!-- Datos personales -->
+                    <div class="form-section">
+                        <h3>Datos Personales</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellidos">Apellidos</label>
+                                <input type="text" id="apellidos" name="apellidos" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dirección de envío -->
+                    <div class="form-section">
+                        <h3>Dirección de Envío</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" id="direccion" name="direccion" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ciudad">Ciudad</label>
+                                <input type="text" id="ciudad" name="ciudad" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="codigo_postal">Código Postal</label>
+                                <input type="text" id="codigo_postal" name="codigo_postal" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="provincia">Provincia</label>
+                                <input type="text" id="provincia" name="provincia" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pais">País</label>
+                                <select id="pais" name="pais" required>
+                                    <option value="">Seleccionar país</option>
+                                    <option value="ES" selected>España</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="FR">Francia</option>
+                                    <option value="IT">Italia</option>
+                                    <option value="DE">Alemania</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Método de pago -->
+                    <div class="form-section">
+                        <h3>Método de Pago</h3>
+                        
+                        <div class="payment-methods">
+                            <div class="payment-method selected" onclick="selectPaymentMethod(this, 'card')">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="5" width="20" height="14" rx="2" stroke="#A94FC7" stroke-width="2"/>
+                                    <line x1="2" y1="10" x2="22" y2="10" stroke="#A94FC7" stroke-width="2"/>
+                                </svg>
+                                <label>Tarjeta</label>
+                            </div>
+                            <div class="payment-method" onclick="selectPaymentMethod(this, 'paypal')">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19 7C19 10.3137 16.3137 13 13 13C9.68629 13 7 10.3137 7 7C7 3.68629 9.68629 1 13 1C16.3137 1 19 3.68629 19 7Z" fill="#A94FC7" fill-opacity="0.2" stroke="#A94FC7" stroke-width="2"/>
+                                    <path d="M5 22C5 17.5817 8.58172 14 13 14C17.4183 14 21 17.5817 21 22H5Z" fill="#A94FC7" fill-opacity="0.2" stroke="#A94FC7" stroke-width="2"/>
+                                </svg>
+                                <label>PayPal</label>
+                            </div>
+                            <div class="payment-method" onclick="selectPaymentMethod(this, 'transfer')">
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#A94FC7" stroke-width="2"/>
+                                    <path d="M12 6V18" stroke="#A94FC7" stroke-width="2"/>
+                                    <path d="M15 9L12 6L9 9" stroke="#A94FC7" stroke-width="2"/>
+                                    <path d="M9 15L12 18L15 15" stroke="#A94FC7" stroke-width="2"/>
+                                </svg>
+                                <label>Transferencia</label>
+                            </div>
+                        </div>
+                        
+                        <!-- Datos de tarjeta (visible por defecto) -->
+                        <div id="card-payment-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card_number">Número de Tarjeta</label>
+                                    <input type="text" id="card_number" name="card_number" placeholder="XXXX XXXX XXXX XXXX" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card_name">Nombre en la Tarjeta</label>
+                                    <input type="text" id="card_name" name="card_name" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry_date">Fecha de Caducidad</label>
+                                    <input type="text" id="expiry_date" name="expiry_date" placeholder="MM/AA" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Datos de PayPal (oculto por defecto) -->
+                        <div id="paypal-payment-form" style="display: none;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="paypal_email">Email de PayPal</label>
+                                    <input type="email" id="paypal_email" name="paypal_email" placeholder="tucorreo@ejemplo.com">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Datos de transferencia (oculto por defecto) -->
+                        <div id="transfer-payment-form" style="display: none;">
+                            <div class="form-group">
+                                <label>Realiza una transferencia a la siguiente cuenta:</label>
+                                <label><strong>Banco:</strong> ScalixBank</label>
+                                <label><strong>IBAN:</strong> ES12 3456 7890 1234 5678 9012</label>
+                                <label><strong>Beneficiario:</strong> Scalix Exotic Pets S.L.</label>
+                                <label><strong>Concepto:</strong> Pedido #SCL-2025-1234</label>
+                                <label>Tu pedido se procesará una vez recibamos el pago.</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Confirmar Pago</button>
+                    
+                    <div class="secure-payment">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" fill="#6a0dad" fill-opacity="0.2" stroke="#6a0dad" stroke-width="2"/>
+                            <path d="M8 11L11 14L16 9" stroke="#6a0dad" stroke-width="2"/>
+                        </svg>
+                        Pago seguro encriptado
+                    </div>
+                    
+                    <div class="privacy-policy">
+                        Al realizar el pago, aceptas nuestros <a href="#">Términos y Condiciones</a> y <a href="#">Política de Privacidad</a>.
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Productos recomendados -->
+        <div class="recommended-products">
+            <h2 class="recommended-title">Productos Recomendados</h2>
+            
+            <div class="recommended-grid">
+                <div class="recommended-item">
+                    <img src="images/suplemento_calcio.png" alt="Suplemento de Calcio">
+                    <h3>Suplemento de Calcio</h3>
+                    <label>€12.50</label>
+                    <button class="add-button">Añadir</button>
+                </div>
+                
+                <div class="recommended-item">
+                    <img src="images/lampara_uvb.png" alt="Lámpara UVB">
+                    <h3>Lámpara UVB 10.0</h3>
+                    <label>€28.95</label>
+                    <button class="add-button">Añadir</button>
+                </div>
+                
+                <div class="recommended-item">
+                    <img src="images/termometro.png" alt="Termómetro">
+                    <h3>Termómetro Digital</h3>
+                    <label>€15.99</label>
+                    <button class="add-button">Añadir</button>
+                </div>
+                
+                <div class="recommended-item">
+                    <img src="images/sustrato.png" alt="Sustrato">
+                    <h3>Sustrato Tropical</h3>
+                    <label>€9.75</label>
+                    <button class="add-button">Añadir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <label>&copy; 2025 Scalix - Animales Exóticos. Todos los derechos reservados.</label>
+    </footer>
+    
+    <script src="js/pago.js"></script>
+    <script src="js/responsive.js"></script>
+
+</body>
+</html>

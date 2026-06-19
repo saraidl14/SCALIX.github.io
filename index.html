@@ -1,0 +1,227 @@
+<!-- Scalix - Mascotas Exóticas -->
+<!-- Este es el archivo HTML principal para la página de inicio de Scalix, una tienda de mascotas exóticas. -->
+<!-- Incluye secciones para navegación, categorías de mascotas, ofertas, galería de mascotas y contacto. -->
+
+<!--
+    Autor: Sara Iglesias
+    Descripcion: Pagina de inicio de una tienda de animales
+    Fecha: 24/03/25
+    versión: 1.0
+    Fecha de Modificación: [23/04/2025]
+
+-->
+
+<!DOCTYPE html> <!-- Declaración del tipo de documento -->
+<html lang="es"> <!-- Idioma de la página -->
+<head>
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración de la vista para dispositivos móviles -->
+    <title>Scalix - Mascotas Exóticas</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- Enlace a la hoja de estilos CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet"> <!-- Enlace a Google Fonts para la tipografía -->
+</head>
+<body> <!-- Cuerpo de la página -->
+    <!-- Header y navegación -->
+    <header>
+        <div class="logo">  <img src="img/logo/SCALIX1.png" alt="Scalix Logo" /> </div> <!-- Logo de la tienda -->
+        <button class="menu-toggle" id="menuToggle">☰</button> <!-- Botón para abrir/cerrar el menú en dispositivos móviles -->
+        <nav id="mainNav" class="nav"> <!-- Navegación principal -->
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="animales.html">Mascotas</a></li>
+            <li><a href="comida.html">Comida</a></li>
+            <li><a href="aboutus.html">Sobre Nosotros</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions"> <!-- Acciones del usuario -->
+            <a href="carrito.html" class="cart-icon">🛒</a> <!-- Enlace al carrito -->
+            <span class="cart-count">0</span> <!-- Contador de artículos en el carrito -->
+            <a href="#" class="profile-icon">
+                <img src="img/profile.jpg" alt="usuario" id="userMenuBtn">
+            </a>
+        </div>
+        <!-- En tu header/nav, donde está el icono de usuario -->
+    
+    </header>
+
+    <!-- Sección Hero con Categorías -->
+    <section class="hero"> <!-- Sección principal de la página -->
+        <h1>¿Qué estas buscando?</h1>
+        <label>Si buscas una nueva mascota, puedes nuestro catálogo</label> <!-- Etiqueta para descripción de lo que puedes encontrar en la tienda-->
+        
+        <div class="categorias"> <!-- Contenedor de categorías -->
+            <a href="reptiles.html" class="categoria"> <!-- Enlace a la categoría de reptiles -->
+                <img src="img/home/chameleon-6307349_1280.jpg" alt="Reptiles"> <!-- Imagen de reptiles -->
+                <div class="categoria-label">Reptiles</div> <!-- Etiqueta de la categoría -->
+            </a>
+            <a href="anfibios.html" class="categoria"> <!-- Enlace a la categoría de anfibios -->
+                <img src="img/home/frog-1335022_1280.jpg" alt="Anfibios"> <!-- Imagen de anfibios -->
+                <div class="categoria-label">Anfibios</div> <!-- Etiqueta de la categoría -->
+            </a>
+            <a href="artropodos.html" class="categoria"> <!-- Enlace a la categoría de artrópodos -->
+                <img src="img/home/spider-111075_1280.jpg" alt="Artrópodos"> <!-- Imagen de artrópodos -->
+                <div class="categoria-label">Artrópodos</div> <!-- Etiqueta de la categoría -->
+            </a>
+        </div>
+        
+        <div class="wave-divider"> <!-- Divisor en forma de ola -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"> <!-- SVG para la ola -->
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity="1"></path> <!-- Trayecto de la ola -->
+        </svg>
+        </div>
+    </section> <!-- Fin de la sección Hero -->
+
+    <!-- Sección de Ofertas -->
+    <section class="ofertas">
+        <h2>Ofertas</h2> <!-- Título de la sección de ofertas -->
+        <label>Estos pequeños con descuento están listos para formar parte de tu hogar</label> <!-- Etiqueta de descripción de ofertas -->
+        
+        <div class="productos"> <!-- Contenedor de productos -->
+            <div class="slider-controls"> <!-- Controles del slider -->
+                <button class="slider-control prev"> <!-- Botón para ir al producto anterior -->
+                    <span>&lt;</span> <!-- Icono de flecha izquierda -->
+                </button>
+                <button class="slider-control next"> <!-- Botón para ir al siguiente producto -->
+                    <span>&gt;</span> <!-- Icono de flecha derecha -->
+                </button>
+            </div>
+            
+            <div class="producto">
+                <picture>
+                    <source srcset="img/geckoleo.webp" type="image/webp"> <!-- Fuente de imagen en formato WebP -->
+                    <img src="img/geckoleo.jpg" alt="Gecko Leopardo"> <!-- Imagen del Gecko Leopardo -->
+                </picture>
+                <div class="producto-info"> <!-- Información del producto -->
+                    <div class="producto-title">Gecko Leopardo</div> <!-- Título del producto -->
+                    <div class="producto-subtitle">Eublepharis macularius</div> <!-- Subtítulo del producto -->
+                    <div class="producto-footer"> <!-- Pie de la información del producto -->
+                        <div class="producto-dot dot-green"></div> <!-- Punto de color verde para indicar la categoría -->
+                        <div class="producto-price">€50</div> <!-- Precio del producto -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="producto">
+                <picture>
+                    <source srcset="img/geckocrestado.webp" type="image/webp"> <!-- Fuente de imagen en formato WebP -->
+                    <img src="img/geckocrestado.jpg" alt="Gecko Crestado"> <!-- Imagen del Gecko Crestado -->
+                </picture>
+                <div class="producto-info"> <!-- Información del producto -->
+                    <div class="producto-title">Gecko Crestado</div> <!-- Título del producto -->
+                    <div class="producto-subtitle">Correlophus ciliatus</div> <!-- Subtítulo del producto -->
+                    <div class="producto-footer"> <!-- Pie de la información del producto -->
+                        <div class="producto-dot dot-blue"></div> <!-- Punto de color azul para indicar la categoría -->
+                        <div class="producto-price">€65</div> <!-- Precio del producto -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="producto"> 
+                <picture>
+                    <source srcset="img/ceratophyrs.webp" type="image/webp"> <!-- Fuente de imagen en formato WebP -->
+                    <img src="img/ceratophyrs.jpg" alt="Ceratophrys de Tierra"> <!-- Imagen del Ceratophrys de Tierra -->
+                </picture>
+                <div class="producto-info"> <!-- Información del producto -->
+                    <div class="producto-title">Ceratophrys de Tierra</div> <!-- Título del producto -->
+                    <div class="producto-subtitle">Ceratophrys cranwelli</div>  <!-- Subtítulo del producto -->
+                    <div class="producto-footer"> <!-- Pie de la información del producto -->
+                        <div class="producto-dot dot-orange"></div> <!-- Punto de color naranja para indicar la categoría -->
+                        <div class="producto-price">€45</div> <!-- Precio del producto -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Carrusel de Imágenes -->
+<section class="carrusel"> <!-- Sección del carrusel de imágenes -->
+    <h2>Galería de Mascotas</h2> <!-- Título de la sección de galería -->
+    <label>Conoce a algunos de nuestros encantadores ejemplares</label> <!-- Etiqueta de descripción de la galería -->
+    
+    <div class="carrusel-container"> <!-- Contenedor del carrusel -->
+        <div class="carrusel-wrapper" id="carruselWrapper"> <!-- Contenedor del carrusel interno -->
+            <div class="carrusel-item">  <!-- Elementos del contenido del carrusel -->
+                <img src="img/mascotas/reptiles/geckos/gecko leopardo nominal.jpg" alt="Gecko Leopardo"> <!-- Imagen del Gecko Leopardo -->
+                <div class="carrusel-caption">Gecko Leopardo</div> <!-- Leyenda de la imagen -->
+            </div>
+            <div class="carrusel-item">         <!-- Elementos del contenido del carrusel -->
+                <img src="img/home/chameleon-6307349_1280.jpg" alt="Camaleón"> <!-- Imagen de un Camaleón -->
+                <div class="carrusel-caption">Camaleón de Pantera</div> <!-- Leyenda de la imagen -->
+            </div>
+            <div class="carrusel-item">        <!-- Elementos del contenido del carrusel -->
+                <img src="img/mascotas/anfibios/ranas/rana flecha azul.jpg" alt="Rana flecha Azul"> <!-- Imagen de una Rana flecha Azul -->
+                <div class="carrusel-caption">Rana Dardo Venenosa</div> <!-- Leyenda de la imagen --> 
+            </div>
+            <div class="carrusel-item">
+                <img src="img/home/spider-111075_1280.jpg" alt="Araña Saltarina"> <!-- Imagen de una Araña Saltarina -->
+                <div class="carrusel-caption">Araña saltarina</div> <!-- Leyenda de la imagen -->
+            </div>
+            <div class="carrusel-item">
+                <img src="img/mascotas/reptiles/serpientes/lampropeltis albina roja.jpg" alt="lampropeltis albina roja"> <!-- Imagen de Lampropeltis Albina Roja -->
+                <div class="carrusel-caption">Lampropeltis Albina Roja</div> <!-- Leyenda de la imagen -->
+            </div>
+        </div>
+        
+        <div class="carrusel-controls"> <!-- Controles del carrusel -->
+            <button class="carrusel-control prev" id="carruselPrev"> <!-- Botón para ir a la imagen anterior -->
+                <span>&lt;</span> <!-- Icono de flecha izquierda -->
+            </button>
+            <button class="carrusel-control next" id="carruselNext"> <!-- Botón para ir a la siguiente imagen -->
+                <span>&gt;</span> <!-- Icono de flecha derecha -->
+            </button>
+        </div>
+        <div class="carrusel-indicators" id="carruselIndicators">
+            <!-- Los indicadores se generarán mediante JavaScript -->
+        </div>
+        
+    </div>
+</section>
+
+    <!-- Sección de Contacto -->
+    <section class="contacto"> <!-- Sección de contacto -->
+        <h2>Contáctanos</h2> <!-- Título de la sección de contacto -->
+        <label>Si quieres adquirir algún ejemplar, primero habla con nosotros</label> <!-- Etiqueta de descripción de contacto -->
+        <label>*Debido a la nueva ley de bienestar animal está prohibido vender animales por internet.</label> <!-- Etiqueta de advertencia sobre la venta de animales por internet -->
+
+        <div class="contacto-info">Nuestro equipo de expertos estará ahí para ayudarte y aclarar todas tus dudas</div> <!-- Información de contacto -->
+        
+        <div class="contacto-opciones"> <!-- Contenedor de opciones de contacto -->
+            <div class="contacto-opcion"> <!-- Opción de contacto -->
+                <h4>Escríbenos un correo</h4> <!-- Título de la opción de contacto por correo -->
+                <label>Respuesta en 24h</label> <!-- Etiqueta de tiempo de respuesta -->
+                <button onclick="mostrarAlerta('info@Scalixexotico.com')" class="contacto-btn">Email</button> <!-- Botón para enviar un correo -->
+            </div>
+            
+            <div class="contacto-opcion"> <!-- Opción de contacto por WhatsApp -->
+                <h4>Háblanos en WhatsApp</h4> <!-- Título de la opción de contacto por WhatsApp -->
+                <label>Respuesta inmediata</label> <!-- Etiqueta de tiempo de respuesta -->
+                <button onclick="mostrarAlerta('+34 600 123 456')" class="contacto-btn whatsapp">WhatsApp</button> <!-- Botón para enviar un mensaje por WhatsApp -->
+            </div>
+            
+            <div class="contacto-opcion">         <!-- Opción de contacto por teléfono -->
+                <h4>Llámanos</h4> <!-- Título de la opción de contacto por teléfono -->
+                <label>Soporte telefónico</label> <!-- Etiqueta de soporte telefónico -->
+                <button onclick="mostrarAlerta('+34 910 654 321')" class="contacto-btn llamada">Llamar</button> <!-- Botón para realizar una llamada telefónica -->
+            </div>
+        </div>
+        <!-- Script para mostrar alerta con información de contacto -->
+        <script> 
+            function mostrarAlerta(contactInfo) {
+                alert('Información de contacto: ' + contactInfo);
+            }
+        </script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <label>&copy; 2025 Scalix - Todos los derechos reservados</label>
+    </footer>
+    </script>
+    <script src="js/auth.js"></script> <!-- Script para autenticación de usuario -->
+    <script src="js/cuenta.js"></script> <!-- Script para gestión de cuenta de usuario -->
+    <script src="js/responsive.js"></script> <!-- Script para diseño responsivo -->
+    <script src="js/carrito.js"></script> <!-- Script para gestión del carrito de compras -->
+    <script src="js/carrousel.js"></script> <!-- Script para el carrusel de imágenes -->
+
+</body>
+</html>

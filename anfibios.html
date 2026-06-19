@@ -1,0 +1,255 @@
+<!--
+        Archivo: anfibios.html
+        Descripción: Página de la categoría Anfibios en el sitio web de Scales.
+        Autor: Sara Iglesias
+    Fecha: 25/03/2025
+    Versión: 1.0
+    Fecha de Modificación: [23/04/2025]
+
+-->
+<!--
+    Este archivo HTML representa la sección de Anfibios en el sitio web de Scales.
+    Contiene una lista de productos anfibios con imágenes, nombres, precios y un modal para detalles adicionales.
+    Incluye un menú de navegación, una barra lateral con categorías y un pie de página. -->
+
+    <!DOCTYPE html> <!-- Declaración del tipo de documento HTML -->
+    <html lang="es"> <!-- Idioma de la página: Español -->
+    <head>
+        <meta charset="UTF-8"> <!-- Codificación de caracteres UTF-8 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport para diseño responsivo -->
+        <title>Scales - Anfibios</title> <!-- Título que aparece en la pestaña del navegador -->
+        <link rel="stylesheet" href="css/anfibios.css"> <!-- Enlace a la hoja de estilos específica para Anfibios -->
+    </head>
+    <body>
+        <!-- Encabezado con navegación principal -->
+        <header>
+            <div class="logo">  <img src="img/logo/SCALIX1.png" alt="Scalix Logo" /> </div> <!-- Logo de la tienda -->
+            <button class="menu-toggle" id="menuToggle">☰</button> <!-- Botón para abrir/cerrar el menú en dispositivos móviles -->
+            <nav id="mainNav" class="nav"> <!-- Navegación principal -->
+                <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="animales.html">Mascotas</a></li>
+                <li><a href="comida.html">Comida</a></li>
+                <li><a href="aboutus.html">Sobre Nosotros</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions"> <!-- Acciones del usuario -->
+                <a href="carrito.html" class="cart-icon">🛒</a> <!-- Enlace al carrito -->
+                <span class="cart-count">0</span> <!-- Contador de artículos en el carrito -->
+                <a href="#" class="profile-icon">
+                    <img src="img/profile.jpg" alt="usuario" id="userMenuBtn">
+                </a>
+            </div>
+            <!-- En tu header/nav, donde está el icono de usuario -->
+        
+        </header>
+    
+        <!-- Barra lateral con categorías de Anfibios -->
+        <div class="sidebar">
+            <h2>Anfibios</h2> <!-- Título del sidebar -->
+            <ul>
+                <li><a href="ranas.html">Ranas</a></li>       <!-- Subcategoría Ranas -->
+                <li><a href="salamandras.html">Salamandras</a></li> <!-- Subcategoría Salamandras -->
+                <li><a href="tritones.html">Tritones</a></li> <!-- Subcategoría Tritones -->
+                <li><a href="ajolotes.html">Ajolotes</a></li> <!-- Subcategoría Ajolotes -->
+            </ul>
+        </div>
+    
+        <!-- Contenido principal: listado de productos Anfibios -->
+        <main>
+            <h1 class="titulo-categoria">Anfibios</h1> <!-- Título de la sección de categoría -->
+            <div class="grid-productos" data-type="rana"> <!-- Contenedor tipo grid para los productos -->
+                
+                <!-- Producto 1: Rana Flecha Azul -->
+                <div class="producto">
+                    <picture>
+                        <img src="img/mascotas/anfibios/ranas/rana flecha azul.jpg" alt="Rana Flecha Azul" data-id="1">
+                        <source srcset="img/mascotas/anfibios/ranas/rana flecha azul.webp" type="image/webp">
+                    </picture>
+                    <h2>Rana Flecha Azul</h2> <!-- Nombre común -->
+                    <span class="gender male">♂️</span> <!-- Indicador de género -->
+                    <label>Dendrobates tinctorius</label> <!-- Nombre científico -->
+                    <label>€90</label> <!-- Precio -->
+                </div>
+    
+                <!-- Producto 2: Rana Dardo Verde -->
+                <div class="producto">
+                    <picture>
+                        <img src="img/mascotas/anfibios/ranas/rana flecha verde.jpg" alt="Rana Dardo Verde" data-id="2">
+                        <source srcset="img/mascotas/anfibios/ranas/rana flecha verde.webp" type="image/webp">
+                    </picture>
+                    <h2>Rana Dardo Verde</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Dendrobates auratus</label>
+                    <label>€80</label>
+                </div>
+    
+                <!-- Producto 3: Rana de Cristal -->
+                <div class="producto">
+                    <picture>
+                        <img src="img/mascotas/anfibios/ranas/rana cristal.jpg" alt="Rana de Cristal" data-id="3">
+                        <source srcset="img/mascotas/anfibios/ranas/rana cristal.webp" type="image/webp">
+                    </picture>
+                    <h2>Rana de Cristal</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Familia Centrolenidae</label>
+                    <label>€85</label>
+                </div>
+    
+                <!-- Producto 4: Salamandra Ibérica -->
+                <div class="producto">
+                    <picture>
+                        <img src="img/mascotas/anfibios/salamandras/salamandra.jpg" alt="Salamandra Ibérica" data-id="4">
+                        <source srcset="img/mascotas/anfibios/salamandras/salamandra.webp" type="image/webp">
+                    </picture>
+                    <h2>Salamandra Ibérica</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Salamandra salamandra</label>
+                    <label>€75</label>
+                </div>
+    
+                <!-- Producto 5: Tritón Alpino -->
+                <div class="producto">
+                    <picture>
+                        <img src="img/mascotas/anfibios/tritron/triton.jpg" alt="Triton albino" data-id="5">
+                        <source srcset="img/mascotas/anfibios/tritron/triton.webp" type="image/webp">
+                    </picture>
+                    <h2>Tritón Alpino</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Ichthyosaura alpestris</label>
+                    <label>€70</label>
+                </div>
+    
+                <!-- Producto 6: Rana Arborícola -->
+                <div class="producto">
+                    <picture>
+                        <source srcset="img/mascotas/anfibios/ranas/rana arboricola.webp" type="image/webp">
+                        <img src="img/mascotas/anfibios/ranas/rana arboricola.jpg" alt="Rana Arborícola" data-id="6">
+                    </picture>
+                    <h2>Rana Arborícola</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Litoria caerulea</label>
+                    <label>€65</label>
+                </div>
+    
+                <!-- Producto 7: Rana de Ojos Rojos -->
+                <div class="producto">
+                    <picture>
+                        <img src="img/mascotas/anfibios/ranas/rana flecha roja y azul.jpg" alt="Rana de Ojos Rojos" data-id="7">
+                        <source srcset="img/mascotas/anfibios/ranas/rana roja y azul.webp" type="image/webp">
+                    </picture>
+                    <h2>Rana de Ojos Rojos</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Agalychnis callidryas</label>
+                    <label>€95</label>
+                </div>
+    
+                <!-- Producto 8: Salamandra de Fuego -->
+                <div class="producto">
+                    <picture>
+                        <source srcset="img/mascotas/anfibios/salamandras/salamandra fuego.webp" type="image/webp">
+                        <img src="img/mascotas/anfibios/salamandras/salamandra fuego.jpg" alt="Salamandra de Fuego" data-id="8">
+                    </picture>
+                    <h2>Salamandra de Fuego</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Salamandra infraimmaculata</label>
+                    <label>€88</label>
+                </div>
+    
+                <!-- Producto 9: Rana de Río -->
+                <div class="producto">
+                    <picture>
+                        <img src="img/mascotas/anfibios/ranas/rana.jpg" alt="Rana de Río" data-id="9">
+                        <source srcset="img/mascotas/anfibios/ranas/rana.webp" type="image/webp">
+                    </picture>
+                    <h2>Rana de Río</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Lithobates catesbeianus</label>
+                    <label>€100</label>
+                </div>
+    
+                <!-- Producto 10: Ajolote Nominal -->
+                <div class="producto">
+                    <picture>
+                        <source srcset="img/mascotas/anfibios/ajolotes/ajolote nominal.webp" type="image/webp">
+                        <img src="img/mascotas/anfibios/ajolotes/ajolote nominal.jpg" alt="Ajolote Nominal" data-id="10">
+                    </picture>
+                    <h2>Ajolote Nominal</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Ambystoma mexicanum</label>
+                    <label>€45</label>
+                </div>
+    
+                <!-- Producto 11: Ajolote Albino -->
+                <div class="producto">
+                    <picture>
+                        <img src="img/mascotas/anfibios/ajolotes/ajolote albino.jpg" alt="Ajolote Albino" data-id="11">
+                        <source srcset="img/mascotas/anfibios/ajolotes/ajolote albino.webp" type="image/webp">
+                    </picture>
+                    <h2>Ajolote Albino</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Ambystoma mexicanum</label>
+                    <label>€55</label>
+                </div>
+    
+            </div>
+        </main>
+    
+        <!-- Modal para mostrar detalles extendidos del animal -->
+        <div id="animalModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span> <!-- Botón para cerrar el modal -->
+                <div class="animal-details">
+                    <div class="animal-image">
+                        <img id="modal-image" src="" alt=""> <!-- Imagen dinámica -->
+                    </div>
+                    <div class="animal-info">
+                        <h2 id="modal-name"></h2> <!-- Nombre común dinámico -->
+                        <label id="modal-scientific" class="scientific-name"></label> <!-- Nombre científico dinámico -->
+                        <label class="price" id="modal-price"></label> <!-- Precio dinámico -->
+                        
+                        <!-- Pestañas de información -->
+                        <div class="tabs">
+                            <div class="tab active" data-tab="descripcion">Descripción</div>
+                            <div class="tab" data-tab="habitat">Hábitat</div>
+                            <div class="tab" data-tab="cuidados">Cuidados</div>
+                            <div class="tab" data-tab="tiendas">Dónde Comprar</div>
+                        </div>
+                        
+                        <!-- Contenido de cada pestaña -->
+                        <div id="tab-descripcion" class="tab-content active">
+                            <div id="modal-description"></div>
+                        </div>
+                        <div id="tab-habitat" class="tab-content">
+                            <div class="habitat-info">
+                                <h3>Hábitat Natural</h3>
+                                <label id="modal-habitat"></label>
+                            </div>
+                        </div>
+                        <div id="tab-cuidados" class="tab-content">
+                            <div class="care-info">
+                                <h3>Recomendaciones de Cuidado</h3>
+                                <label id="modal-care"></label>
+                            </div>
+                        </div>
+                        <div id="tab-tiendas" class="tab-content">
+                            <div class="store-info">
+                                <h3>Disponibilidad en Tiendas</h3>
+                                <div id="modal-stores"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Scripts de funcionalidad -->
+        <script src="js/anfibios.js"></script>    <!-- Lógica específica de la página Anfibios -->
+        <script src="js/responsive.js"></script>  <!-- Manejo del menú y diseño responsivo -->
+    
+        <!-- Pie de página -->
+        <footer>
+            <label>&copy; 2025 Scales. Todos los derechos reservados.</label>
+        </footer>
+    </body>
+    </html>

@@ -1,0 +1,246 @@
+<!--
+    Archivo: perfil.html
+    Descripción: Página de perfil de usuario para la tienda online "Scalix", especializada en mascotas exóticas.
+    Contiene información del usuario, como nombre, apellido, email, fecha de registro y opciones de configuración.
+    Autor: Sara Iglesias
+    Fecha: 28/03/25
+    Versión: 1.0
+    Fecha de Modificación: [23/04/2025]
+-->
+
+<!-- Creacion de un perfil para la pagina-->
+
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+<html lang="es"> <!-- Idioma de la página -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración de la vista para dispositivos móviles -->
+    <title>Perfil - Scalix</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- Enlace al archivo CSS para estilos generales -->
+
+    <link rel="stylesheet" href="css/perfil.css"> <!-- Enlace al archivo CSS específico para el perfil -->
+<!-- Creacion de un perfil para la pagina-->
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="img/logo/SCALIX1.png" alt="Scalix Logo" /></div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <nav id="mainNav" class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="animales.html">Mascotas</a></li>
+                <li><a href="comida.html">Comida</a></li>
+                <li><a href="aboutus.html">Sobre Nosotros</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="carrito.html" class="cart-icon">🛒</a>
+            <span class="cart-count">0</span>
+            <a href="#" class="profile-icon">
+                <img src="img/profile.jpg" alt="usuario" id="userMenuBtn">
+            </a>
+        </div>
+    </header>
+
+    <div class="perfil-container"> <!-- Contenedor principal del perfil -->
+        <div class="perfil-header"> <!-- Encabezado del perfil -->
+            <h1>Mi Perfil</h1> <!-- Título del perfil -->
+            <label>Administra tu información y configura tus preferencias</label> <!-- Descripción del perfil -->
+        </div>
+
+        <div class="perfil-content">     <!-- Contenido del perfil -->
+            <!-- Sidebar con navegación -->
+            <div class="perfil-sidebar"> <!-- Barra lateral del perfil -->
+                <div class="perfil-avatar"> <!-- Avatar del usuario -->
+                    <img id="profile-image" src="img/profile.jpg" alt="Avatar de usuario">
+                    <div class="perfil-status">
+                        <span class="status-dot"></span>
+                    </div>
+                </div>
+                
+                <div class="perfil-menu"> <!-- Menú de navegación del perfil -->
+                    <a href="#informacion" class="perfil-menu-item active">Información Personal</a> <!-- Enlace a la sección de información personal -->
+                    <a href="#pedidos" class="perfil-menu-item">Mis Pedidos</a> <!-- Enlace a la sección de pedidos -->
+                    <a href="#favoritos" class="perfil-menu-item">Mis Favoritos</a> <!-- Enlace a la sección de favoritos -->
+                    <a href="#configuracion" class="perfil-menu-item">Configuración</a> <!-- Enlace a la sección de configuración -->
+                </div>
+                
+                <div class="cerrar-sesion-container"> <!-- Contenedor para cerrar sesión -->
+                    <button class="btn-cerrar-sesion">Cerrar Sesión</button> <!-- Botón para cerrar sesión -->
+                </div>
+            </div>
+
+            <!-- Contenido principal -->
+            <div class="perfil-main">
+                <!-- Sección de información personal -->
+                <section id="informacion" class="perfil-section active">
+                    <h2>Información Personal</h2>
+                    
+                    <div class="info-container"> <!-- Contenedor de información personal -->
+                        <div class="info-card"> <!-- Tarjeta de información personal -->
+                            <div class="info-row"> <!-- Fila de información -->
+                                <div class="info-label">Nombre:</div> <!-- Etiqueta de nombre -->
+                                <div id="nombre-usuario" class="info-value">-</div> <!-- Valor de nombre -->
+                            </div>
+                            <div class="info-row"> <!-- Fila de información -->
+                                <div class="info-label">Apellido:</div> <!-- Etiqueta de apellido -->
+                                <div id="apellido-usuario" class="info-value">-</div> <!-- Valor de apellido -->
+                            </div>
+                            <div class="info-row">  <!-- Fila de información -->
+                                <div class="info-label">Email:</div> <!-- Etiqueta de email -->
+                                <div id="email-usuario" class="info-value">-</div> <!-- Valor de email -->
+                            </div> 
+                            <div class="info-row">
+                                <div class="info-label">Fecha de registro:</div> <!-- Etiqueta de fecha de registro -->
+                                <div id="fecha-registro" class="info-value">-</div> <!-- Valor de fecha de registro -->
+                            </div>
+                        </div>
+                        
+                        <div class="botones-accion">
+                            <button class="btn-editar">Editar Información</button> <!-- Botón para editar información -->
+                            <button class="btn-cambiar-pass">Cambiar Contraseña</button> <!-- Botón para cambiar contraseña -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección de pedidos -->
+                <section id="pedidos" class="perfil-section">  
+                    <h2>Historial de Pedidos</h2>
+                    
+                    <div class="info-container">
+                        <div class="no-items">
+                            <label>No has realizado ningún pedido todavía.</label> <!-- Mensaje si no hay pedidos -->
+                        </div>
+                        
+                        <div class="botones-accion">
+                            <button class="btn-ver-catalogo">Explorar Productos</button> <!-- Botón para explorar productos --> 
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección de favoritos -->
+                <section id="favoritos" class="perfil-section">
+                    <h2>Mascotas Favoritas</h2>
+                    
+                    <div class="info-container">
+                        <div id="favoritos-container" class="favoritos-grid">
+                            <!-- Los favoritos se cargarán aquí dinámicamente -->
+                        </div>
+                        <div id="no-favoritos" class="no-items" style="display: none;">
+                            <label>No tienes mascotas guardadas en favoritos.</label>
+                        </div>
+                        
+                        <div class="botones-accion">
+                            <a href="animales.html" class="btn-explorar">Ver Mascotas</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección de configuración -->
+                <section id="configuracion" class="perfil-section">
+                    <h2>Configuración de la cuenta</h2>
+                    
+                    <div class="config-container">
+                        <div class="config-card">
+                            <h3>Preferencias de notificación</h3>
+                            
+                            <div class="toggle-row">
+                                <span>Notificaciones por email</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="toggle-row">
+                                <span>Newsletter semanal</span>
+                                <label class="switch">
+                                    <input type="checkbox">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="toggle-row">
+                                <span>Ofertas especiales</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-zone">
+                            <h3>Zona de Peligro</h3>
+                            <label>Atención: Las siguientes acciones no se pueden deshacer.</label>
+                            
+                            <div class="botones-accion">
+                                <button class="btn-eliminar">Eliminar Cuenta</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales -->
+    <div id="modal-editar" class="perfil-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-editar-titulo">
+        <div class="perfil-modal-overlay" data-close></div>
+        <div class="perfil-modal-content">
+            <div class="perfil-modal-header">
+                <h3 id="modal-editar-titulo">Editar información</h3>
+                <button class="perfil-modal-close" type="button" aria-label="Cerrar" data-close>✕</button>
+            </div>
+            <form id="form-editar" class="perfil-modal-body">
+                <div class="form-row">
+                    <label for="input-nombre">Nombre</label>
+                    <input id="input-nombre" name="nombre" type="text" required>
+                </div>
+                <div class="form-row">
+                    <label for="input-apellido">Apellido</label>
+                    <input id="input-apellido" name="apellido" type="text" required>
+                </div>
+                <div class="form-row">
+                    <label for="input-email">Email</label>
+                    <input id="input-email" name="email" type="email" required>
+                </div>
+                <div class="perfil-modal-footer">
+                    <button type="button" class="btn-secundario" data-close>Cancelar</button>
+                    <button type="submit" class="btn-primario">Guardar cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-pass" class="perfil-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-pass-titulo">
+        <div class="perfil-modal-overlay" data-close></div>
+        <div class="perfil-modal-content">
+            <div class="perfil-modal-header">
+                <h3 id="modal-pass-titulo">Cambiar contraseña</h3>
+                <button class="perfil-modal-close" type="button" aria-label="Cerrar" data-close>✕</button>
+            </div>
+            <form id="form-pass" class="perfil-modal-body">
+                <div class="form-row" id="row-pass-actual">
+                    <label for="input-pass-actual">Contraseña actual</label>
+                    <input id="input-pass-actual" name="actual" type="password" autocomplete="current-password">
+                </div>
+                <div class="form-row">
+                    <label for="input-pass-nueva">Nueva contraseña</label>
+                    <input id="input-pass-nueva" name="nueva" type="password" required autocomplete="new-password" minlength="6">
+                </div>
+                <div class="form-row">
+                    <label for="input-pass-confirmar">Confirmar contraseña</label>
+                    <input id="input-pass-confirmar" name="confirmar" type="password" required autocomplete="new-password" minlength="6">
+                </div>
+                <div class="perfil-modal-footer">
+                    <button type="button" class="btn-secundario" data-close>Cancelar</button>
+                    <button type="submit" class="btn-primario">Actualizar contraseña</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/perfil.js"></script>
+    <script src="js/responsive.js"></script> <!-- Llamamos al JavaScript responsivo -->
+</body>
+</html>

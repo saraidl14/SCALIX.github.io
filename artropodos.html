@@ -1,0 +1,249 @@
+<!--
+Arcivho: artropodos.html
+Autor: Sara Iglesias
+Fecha: 26/03/25
+Descripción: Página de categoría de artrópodos en el sitio web de Scalix.
+Fecha de Modificación: [22/04/2025]
+
+-->
+
+<!--
+    Este es un archivo HTML que representa una página web dedicada a la categoría de "Artrópodos" en un sitio de comercio electrónico llamado "Scalix". 
+    La página incluye una barra de navegación, una sección principal con productos de artrópodos y un pie de página. 
+    Los productos están organizados en una cuadrícula y cada producto tiene información como nombre, género, especie y precio. 
+    También se incluyen imágenes de los productos y un menú lateral para navegar por diferentes tipos de artrópodos.
+-->
+
+<!DOCTYPE html> <!--Tipo de documento-->
+<html lang="es"> <!--Idioma de la página-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalix - Artropodos</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="css/artropodos.css"> <!-- Enlace a la hoja de estilos CSS -->
+</head>
+<body>
+    <header>
+        <div class="logo">  <img src="img/logo/SCALIX1.png" alt="Scalix Logo" /> </div> <!-- Logo de la tienda -->
+        <button class="menu-toggle" id="menuToggle">☰</button> <!-- Botón para abrir/cerrar el menú en dispositivos móviles -->
+        <nav id="mainNav" class="nav"> <!-- Navegación principal -->
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="animales.html">Mascotas</a></li>
+            <li><a href="comida.html">Comida</a></li>
+            <li><a href="aboutus.html">Sobre Nosotros</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions"> <!-- Acciones del usuario -->
+            <a href="carrito.html" class="cart-icon">🛒</a> <!-- Enlace al carrito -->
+            <span class="cart-count">0</span> <!-- Contador de artículos en el carrito -->
+            <a href="#" class="profile-icon">
+                <img src="img/profile.jpg" alt="usuario" id="userMenuBtn">
+            </a>
+        </div>
+        <!-- En tu header/nav, donde está el icono de usuario -->
+    
+    </header>
+    
+    <!-- Sidebar añadido -->
+    <div class="sidebar"> <!-- Contenedor del menú lateral -->
+        <h2>Artrópodos</h2> <!-- Título del menú lateral -->
+        <ul>
+            <li><a href="#">Arácnidos</a></li> <!-- Enlace a la sección de arácnidos -->
+            <li><a href="#">Insectos</a></li> <!-- Enlace a la sección de insectos -->
+            <li><a href="#">Crustáceos</a></li> <!-- Enlace a la sección de crustáceos -->
+            <li><a href="#">Miriápodos</a></li> <!-- Enlace a la sección de miriápodos -->
+        </ul>
+    </div>
+    
+    <main>
+        <!-- Sección Artrópodos -->
+    <section id="artropodos" class="category-section">
+        <h1 class="titulo-categoria">Artrópodos</h1> <!-- Título de la sección -->
+        <div class="grid-productos"> <!-- Contenedor de productos -->
+
+            <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="female" data-price="40"> <!-- Producto 1 -->
+                <picture> <!-- Contenedor de imagen -->
+                    <source srcset="img/mascotas/artrópodos/araña saltarina/pexels-nietjuhart-2115608.webp" type="image/webp"> 
+                    <source srcset="img/mascotas/artrópodos/araña saltarina/pexels-nietjuhart-2115608.jpg" type="image/jpeg">
+                    <img src="img/mascotas/artrópodos/araña saltarina/pexels-nietjuhart-2115608.jpg" alt="Araña Saltarina" data-id="21">
+                </picture>
+                <h2>Araña Saltarina</h2>
+                <span class="gender female">♀️</span> <!-- Género del producto -->
+                <label>Phidippus regius</label> <!-- Especie del producto -->
+                <label>€40</label> <!-- Precio del producto -->
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="female" data-price="75">
+                <picture>
+                    <source srcset="img/mascotas/artrópodos/avicularia versicolor/pexels-aibek-skakov-418917601-20954758.webp" type="image/webp">
+                    <source srcset="img/mascotas/artrópodos/avicularia versicolor/pexels-aibek-skakov-418917601-20954758.jpg" type="image/jpeg">
+                    <img src="img/mascotas/artrópodos/avicularia versicolor/pexels-aibek-skakov-418917601-20954758.jpg" alt="Avicularia Versicolor" data-id="22">
+                </picture>
+                <h2>Avicularia Versicolor</h2>
+                <span class="gender female">♀️</span>
+                <label>Caribena versicolor</label>
+                <label>€75</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="male" data-price="65">
+                <picture>
+                    <source srcset="img/mascotas/artrópodos/tarantula brasileña/pexels-tyler-gresh-1165446157-23201014.webp" type="image/webp">
+                    <source srcset="img/mascotas/artrópodos/tarantula brasileña/pexels-tyler-gresh-1165446157-23201014.jpg" type="image/jpeg">
+                    <img src="img/mascotas/artrópodos/tarantula brasileña/pexels-tyler-gresh-1165446157-23201014.jpg" alt="Tarántula Brasileña" data-id="23">
+                </picture>
+                <h2>Tarántula Brasileña</h2>
+                <span class="gender male">♂️</span>
+                <label>Nhandu chromatus</label>
+                <label>€65</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="female" data-price="70">
+                <picture>
+                    <source srcset="img/mascotas/artrópodos/tarantula de rodillas doradas/pexels-ronja-meyer-257774864-12623121.webp" type="image/webp">
+                    <source srcset="img/mascotas/artrópodos/tarantula de rodillas doradas/pexels-ronja-meyer-257774864-12623121.jpg" type="image/jpeg">
+                    <img src="img/mascotas/artrópodos/tarantula de rodillas doradas/pexels-ronja-meyer-257774864-12623121.jpg" alt="Tarántula de Rodillas Doradas" data-id="24">
+                </picture>
+                <h2>Tarántula de Rodillas Doradas</h2>
+                <span class="gender female">♀️</span>
+                <label>Brachypelma smithi</label>
+                <label>€70</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="male" data-price="68">
+                <picture>
+                    <source srcset="img/mascotas/artrópodos/tarantula de rodillas rojas/pexels-marcusl-3234842.webp" type="image/webp">
+                    <source srcset="img/mascotas/artrópodos/tarantula de rodillas rojas/pexels-marcusl-3234842.jpg" type="image/jpeg">
+                    <img src="img/mascotas/artrópodos/tarantula de rodillas rojas/pexels-marcusl-3234842.jpg" alt="Tarántula de Rodillas Rojas" data-id="25">
+                </picture>
+                <h2>Tarántula de Rodillas Rojas</h2>
+                <span class="gender male">♂️</span>
+                <label>Brachypelma emilia</label>
+                <label>€68</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="female" data-price="80">
+                <picture>
+                    <source srcset="img/mascotas/artrópodos/tarantula morada dominicana/pexels-wwarby-19679351.webp" type="image/webp">
+                    <source srcset="img/mascotas/artrópodos/tarantula morada dominicana/pexels-wwarby-19679351.jpg" type="image/jpeg">
+                    <img src="img/mascotas/artrópodos/tarantula morada dominicana/pexels-wwarby-19679351.jpg" alt="Tarántula Morada Dominicana" data-id="26">
+                </picture>
+                <h2>Tarántula Morada Dominicana</h2>
+                <span class="gender female">♀️</span>
+                <label>Cyriocosmus ritae</label>
+                <label>€80</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="both" data-price="40">
+                <picture>
+                    <img src="img/mascotas/artrópodos/cazadora.jpg" alt="Araña Cazadora">
+                    <source srcset="img/mascotas/artrópodos/cazadora.webp" type="image/webp">
+                </picture>
+                <h2>Araña Cazadora</h2>
+                <span class="gender female">♀️</span><span class="gender male">♂️</span>
+                <label>Familia Sparassidae</label>
+                <label>€40</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="male" data-price="55">
+                <picture>
+                    <img src="img/mascotas/artrópodos/chilena.jpg" alt="Tarántula Chilena">
+                    <source srcset="img/mascotas/artrópodos/chilena.webp" type="image/webp">
+                </picture>
+                <h2>Tarántula Chilena</h2>
+                <span class="gender male">♂️</span>
+                <label>Grammostola rosea</label>
+                <label>€55</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="escorpiones" data-gender="male" data-price="65">
+                <picture>
+                    <img src="img/mascotas/artrópodos/escorpion.jpg" alt="Escorpión Emperador">
+                    <source srcset="img/mascotas/artrópodos/escorpion.webp" type="image/webp">
+                </picture>
+                    <h2>Escorpión Emperador</h2>
+                <span class="gender male">♂️</span>
+                <label>Pandinus imperator</label>
+                <label>€65</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="crustaceos" data-gender="female" data-price="70">
+                <picture>
+                    <img src="img/mascotas/artrópodos/cangrejo.jpg" alt="Cangrejo de Río">
+                    <source srcset="img/mascotas/artrópodos/cangrejo.webp" type="image/webp">
+                </picture>
+                <h2>Cangrejo de Río</h2>
+                <span class="gender female">♀️</span>
+                <label>Astacidae</label>
+                <label>€70</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="crustaceos" data-gender="female" data-price="35">
+                <picture>
+                    <img src="img/mascotas/artrópodos/camaron.jpg" alt="Camarón Piquero">
+                    <source srcset="img/mascotas/artrópodos/camaron.webp" type="image/webp">
+                </picture>
+                <h2>Camarón Piquero</h2>
+                <span class="gender female">♀️</span>
+                <label>Neocaridina davidi</label>
+                <label>€35</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="insectos" data-gender="both" data-price="45">
+                <picture>
+                    <img src="img/mascotas/artrópodos/insectos/polilla.jpg" alt="Polilla Luna">
+                    <source srcset="img/mascotas/artrópodos/insectos/polilla.webp" type="image/webp">
+                </picture>
+                <h2>Polilla Luna</h2>
+                <span class="gender female">♀️</span><span class="gender male">♂️</span>
+                <label>Actias luna</label>
+                <label>€45</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="insectos" data-gender="female" data-price="25">
+                <picture>
+                    <img src="img/alimento/grillos/grillos.jpg" alt="Grillo de Campo">
+                    <source srcset="img/mascotas/artrópodos/insectos/grillo.webp" type="image/webp">
+                </picture>
+                <h2>Grillo de Campo</h2>
+                <span class="gender female">♀️</span>
+                <label>Gryllidae</label>
+                <label>€25</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="insectos" data-gender="both" data-price="50">
+                <picture>
+                    <img src="img/mascotas/artrópodos/insectos/libelula.jpg" alt="Libélula Común">
+                    <source srcset="img/mascotas/artrópodos/insectos/libelula.webp" type="image/webp">
+                </picture>
+                <h2>Libélula Común</h2>
+                <span class="gender female">♀️</span><span class="gender male">♂️</span>
+                <label>Odonata</label>
+                <label>€50</label>
+            </div>
+            
+            <div class="producto" data-category="artropodos" data-type="miriapodos" data-gender="male" data-price="85">
+                <picture>
+                    <img src="img/mascotas/artrópodos/insectos/ciempies.jpg" alt="Ciempiés Gigante">
+                    <source srcset="img/mascotas/artrópodos/insectos/ciempies.webp" type="image/webp">
+                </picture>
+                <h2>Ciempiés gigante</h2>
+                <span class="gender male">♂️</span>
+                <label>Scolopendra gigantea</label>
+                <label>€85</label>
+            </div>
+        </div>
+    </section> <!-- Fin de la sección de artrópodos -->
+    </main> <!-- Fin del contenedor principal -->
+    <script src="js/filtrado.js"></script> <!-- Enlace al script de filtrado de productos -->
+
+    <footer>
+        <label>&copy; 2025 Scalix. Todos los derechos reservados.</label>
+    </footer>
+    
+    <script src="js/artropodos.js"></script> <!-- Enlace al script de la página de artrópodos -->
+    <script src="js/responsive.js"></script> <!-- Enlace al script para la responsividad de la página -->
+
+</body>
+</html>
+<!-- Fin del archivo HTML -->

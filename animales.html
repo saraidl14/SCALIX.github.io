@@ -1,0 +1,439 @@
+
+<!--
+    Archivo: animales.html
+    Descripción: Página web para la tienda de animales exóticos "Scalix" que contiene a todos los animales disponibles.
+    Autor: Sara Iglesias
+    Fecha: 25/03/25
+    Versión: 1.0
+    Fecha de Modificación: 07/09/2025
+
+
+-->
+<!--
+    Este es un archivo HTML que representa una página web para una tienda de animales exóticos llamada "Scalix". 
+    La página incluye un encabezado con un menú de navegación, una barra lateral con categorías de animales, 
+    y secciones para diferentes tipos de animales como reptiles, anfibios y artrópodos. 
+    También incluye un modal para mostrar detalles de los animales seleccionados.
+
+-->
+
+<!DOCTYPE html>  <!-- Cambiado de "html" a "DOCTYPE html" para HTML5 -->    
+<!-- Idioma del documento -->
+<head> <!-- Encabezado del documento -->
+    <meta charset="UTF-8">  <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scales - Animales Exóticos</title> <!-- Título de la página -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animales.css"> <!-- Enlace a la hoja de estilos CSS -->
+</head>
+<body> <!-- Cuerpo del documento -->
+    <header>
+        <div class="logo">  <img src="img/logo/SCALIX1.png" alt="Scalix Logo" /> </div> <!-- Logo de la tienda -->
+        <button class="menu-toggle" id="menuToggle">☰</button> <!-- Botón para abrir/cerrar el menú en dispositivos móviles -->
+        <nav id="mainNav" class="nav"> <!-- Navegación principal -->
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="animales.html">Mascotas</a></li>
+            <li><a href="comida.html">Comida</a></li>
+            <li><a href="aboutus.html">Sobre Nosotros</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions"> <!-- Acciones del usuario -->
+            <a href="carrito.html" class="cart-icon">🛒</a> <!-- Enlace al carrito -->
+            <span class="cart-count">0</span> <!-- Contador de artículos en el carrito -->
+            <a href="#" class="profile-icon">
+                <img src="img/profile.jpg" alt="usuario" id="userMenuBtn">
+            </a>
+        </div>
+        <!-- En tu header/nav, donde está el icono de usuario -->
+    
+    </header>
+    
+    <!-- Sidebar unificado -->
+    <div class="sidebar">
+        <div class="sidebar-category">
+            <h2 id="reptiles-header">Reptiles</h2>
+            <div class="sidebar-content" id="reptiles-content"> <!-- Reptiles -->
+                <ul>
+                    <li><a href="#" data-filter="geckos">Geckos</a></li> <!-- Cambiado de "Reptiles" a "geckos" -->
+                    <li><a href="#" data-filter="camaleones">Camaleones</a></li> <!-- Cambiando de "reptiles a "camaleones" -->
+                    <li><a href="#" data-filter="serpientes">Serpientes</a></li> <!-- Cambiado de "reptiles" a "serpientes" -->
+                    <li><a href="#" data-filter="tortugas">Tortugas</a></li>  <!-- Cambiado de "reptiles" a "tortugas" -->
+                    <li><a href="#" data-category="reptiles">Ver todos</a></li> <!-- Volviendo a "reptiles" -->
+                </ul>
+            </div>
+        </div>
+        
+        <div class="sidebar-category"> <!-- Categoria Anfibios -->
+            <h2 id="anfibios-header">Anfibios</h2>
+            <div class="sidebar-content" id="anfibios-content">
+                <ul>
+                    <li><a href="#" data-filter="ranas">Ranas</a></li> <!-- Cambiado de "anfibios" a "ranas"-->
+                    <li><a href="#" data-filter="salamandras">Salamandras</a></li>  <!-- Cambiado de "anfibios" a "salamandras" -->
+                    <li><a href="#" data-filter="tritones">Tritones</a></li>  <!-- Cambiado de "anfibios" a "tritones" -->
+                    <li><a href="#" data-filter="ajolotes">Ajolotes</a></li> <!-- Cambiado de "anfibios" a "ajolotes" -->
+                    <li><a href="#" data-category="anfibios">Ver todos</a></li> <!-- Volviendo a "anfibios" -->
+                </ul>
+            </div>
+        </div>
+        
+        <div class="sidebar-category"> <!-- Categoria Artrópodos -->
+            <h2 id="artropodos-header">Artrópodos</h2>
+            <div class="sidebar-content" id="artropodos-content"> 
+                <ul>
+                    <li><a href="#" data-filter="aracnidos">Arácnidos</a></li> <!-- Cambiado de "artropodos" a "aracnidos" -->
+                    <li><a href="#" data-filter="insectos">Insectos</a></li> <!-- Cambiado de "artropodos" a "insectos" -->
+                    <li><a href="#" data-filter="crustaceos">Crustáceos</a></li> <!-- Cambiado de "artropodos" a "crustaceos" -->
+                    <li><a href="#" data-filter="miriapodos">Miriápodos</a></li> <!-- Cambiado de "artropodos" a "miriapodos" -->
+                    <li><a href="#" data-category="artropodos">Ver todos</a></li>   <!-- Volviendo a "artropodos" -->
+                </ul>
+            </div>
+        </div>
+        
+        <div class="sidebar-category"> <!-- Categoria Todos los animales -->
+            <h2 id="todos-header">Todos los animales</h2>
+            <div class="sidebar-content" id="todos-content">
+                <ul> 
+                    <li><a href="#" data-category="all">Mostrar todos</a></li> <!-- Mostrando Todos -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="filter-controls"> <!-- Controles de filtro -->
+            <div class="filters"> <!-- Filtros -->
+                <div class="filter-group">  
+                    <label for="genderFilter">Género:</label> <!-- Filtro de género -->
+                    <select id="genderFilter"> <!-- Selección de género -->
+                        <option value="all">Todos</option> <!-- Opción para todos los géneros -->
+                        <option value="male">Masculino ♂️</option> <!-- Opción para masculino -->
+                        <option value="female">Femenino ♀️</option> <!-- Opción para femenino -->
+                    </select>
+                </div>
+                <div class="filter-group"> 
+                    <label for="priceFilter">Precio máximo:</label> <!-- Filtro de precio -->
+                    <input type="range" id="priceFilter" min="0" max="200" value="200" step="10"> <!-- Rango de precio -->
+                    <span id="priceValue">200€</span> <!-- Valor del precio máximo -->
+                </div>
+                <div class="filter-group">
+                    <label for="searchFilter">Buscar:</label> <!-- Filtro de búsqueda -->
+                    <input type="text" id="searchFilter" placeholder="Nombre o especie..."> <!-- Campo de búsqueda -->
+                </div>
+                <button id="applyFilters" class="filter-button">Aplicar filtros</button> <!-- Botón para aplicar filtros -->
+                <button id="resetFilters" class="filter-button">Resetear</button>
+            </div>
+        </div>
+    
+    <!-- Sección Reptiles -->
+        <section id="reptiles" class="category-section active">
+            <h1 class="titulo-categoria">Reptiles</h1>
+            <div class="grid-productos">
+
+            <!-- Camaleones -->
+                <div class="producto" data-category="reptiles" data-type="camaleones" data-gender="male" data-price="150">
+                    <picture>
+                        <source srcset="img/mascotas/reptiles/camaleones/camaleon de yemen.webp" type="image/webp">
+                        <source srcset="img/mascotas/reptiles/camaleones/camaleon de yemen.jpg" type="image/jpeg">
+                        <img src="img/mascotas/reptiles/camaleones/camaleon de yemen.jpg" alt="Camaleón de Yemen" data-id="1">
+                    </picture>
+                    <h2>Camaleón de Yemen</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Chamaeleo calyptratus</label>
+                    <label>€150</label>
+                </div>
+                <div class="producto" data-category="reptiles" data-type="camaleones" data-gender="female" data-price="180">
+                    <img src="img/mascotas/reptiles/camaleones/camaleon pantera.jpg" alt="Camaleón Pantera" data-id="2">
+                    <h2>Camaleón Pantera</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Furcifer pardalis</label>
+                    <label>€180</label>
+                </div>
+
+            <!-- Geckos -->
+                <div class="producto" data-category="reptiles" data-type="geckos" data-gender="female" data-price="120">
+                    <img src="img/mascotas/reptiles/geckos/gecko crestado dalmatian red.jpg" alt="Gecko Crestado Dalmatian Red" data-id="3">
+                    <h2>Gecko Crestado Dalmatian Red</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Correlophus ciliatus</label>
+                    <label>€120</label>
+                </div>
+                <div class="producto" data-category="reptiles" data-type="geckos" data-gender="male" data-price="100">
+                    <img src="img/mascotas/reptiles/geckos/gecko crestado dalmatian.jpg" alt="Gecko Crestado Dalmatian" data-id="4">
+                    <h2>Gecko Crestado Dalmatian</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Correlophus ciliatus</label>
+                    <label>€100</label>
+                </div>
+                <div class="producto" data-category="reptiles" data-type="geckos" data-gender="female" data-price="130">
+                    <img src="img/mascotas/reptiles/geckos/gecko leopardo albino.jpg" alt="Gecko Leopardo Albino" data-id="5">
+                    <h2>Gecko Leopardo Albino</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Eublepharis macularius</label>
+                    <label>€130</label>
+                </div>
+                <div class="producto" data-category="reptiles" data-type="geckos" data-gender="male" data-price="110">
+                    <img src="img/mascotas/reptiles/geckos/gecko leopardo high yellow.jpg" alt="Gecko Leopardo High Yellow" data-id="6">
+                    <h2>Gecko Leopardo High Yellow</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Eublepharis macularius</label>
+                    <label>€110</label>
+                </div>
+                <div class="producto" data-category="reptiles" data-type="geckos" data-gender="female" data-price="100">
+                    <img src="img/mascotas/reptiles/geckos/gecko leopardo nominal.jpg" alt="Gecko Leopardo Nominal" data-id="7">
+                    <h2>Gecko Leopardo Nominal</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Eublepharis macularius</label>
+                    <label>€100</label>
+                </div>
+
+            <!-- Pogona -->
+                <div class="producto" data-category="reptiles" data-type="pogona" data-gender="male" data-price="115">
+                    <img src="img/mascotas/reptiles/pogonas/pogona roja.jpg" alt="Pogona Roja" data-id="8">
+                    <h2>Pogona Roja</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Pogona vitticeps</label>
+                    <label>€115</label>
+                </div>
+                <div class="producto" data-category="reptiles" data-type="pogona" data-gender="female" data-price="110">
+                    <img src="img/mascotas/reptiles/pogonas/pogona.jpg" alt="Pogona" data-id="9">
+                    <h2>Pogona</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Pogona vitticeps</label>
+                    <label>€110</label>
+                </div>
+
+            <!-- Serpientes -->
+                <div class="producto" data-category="reptiles" data-type="serpientes" data-gender="female" data-price="95">
+                    <img src="img/mascotas/reptiles/serpientes/serpiente del maiz.jpg" alt="Serpiente del Maíz" data-id="10">
+                    <h2>Serpiente del Maíz</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Pantherophis guttatus</label>
+                    <label>€95</label>
+                </div>
+                <div class="producto" data-category="reptiles" data-type="serpientes" data-gender="male" data-price="100">
+                    <img src="img/mascotas/reptiles/serpientes/serpiente texana leuicistica.jpg" alt= "Serpiente Texana Leucística" data-id="11">
+                    <h2>Serpiente Texana Leucística</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Pantherophis obsoletus</label>
+                    <label>€100</label>
+                </div>
+                <div class="producto" data-category="reptiles" data-type="serpientes" data-gender="female" data-price="105">
+                    <img src="img/mascotas/reptiles/serpientes/lampropeltis albina roja.jpg" alt="Lampropeltis Albina Roja" data-id="12">
+                    <h2>Lampropeltis Albina Roja</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Lampropeltis triangulum</label>
+                    <label>€105</label>
+                </div>
+
+            <!-- Tortugas -->
+                <div class="producto" data-category="reptiles" data-type="tortugas" data-gender="female" data-price="110">
+                    <img src="img/mascotas/reptiles/tortugas/tortuga de agua.jpg" alt="Tortuga de Agua" data-id="13">
+                    <h2>Tortuga de Agua</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Trachemys scripta elegans</label>
+                    <label>€110</label>
+                </div>
+                <div class="producto" data-category="reptiles" data-type="tortugas" data-gender="female" data-price="130">
+                    <img src="img/mascotas/reptiles/tortugas/tortuga mediterranea.jpg" alt="Tortuga Mediterránea" data-id="14">
+                    <h2>Tortuga Mediterránea</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Testudo hermanni</label>
+                    <label>€130</label>
+                </div>
+                <div class="producto" data-category="reptiles" data-type="tortugas" data-gender="male" data-price="135">
+                    <img src="img/mascotas/reptiles/tortugas/tortuga rusa.jpg" alt="Tortuga Rusa" data-id="15">
+                    <h2>Tortuga Rusa</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Agrionemys horsfieldii</label>
+                    <label>€135</label>
+                </div>
+            </div>
+        </section>
+
+    <!-- Sección Anfibios -->
+        <section id="anfibios" class="category-section">
+            <h1 class="titulo-categoria">Anfibios</h1>
+            <div class="grid-productos">
+
+                <div class="producto" data-category="anfibios" data-type="ajolotes" data-gender="male" data-price="45">
+                    <img src="img/mascotas/anfibios/ajolotes/ajolote nominal.jpg" alt="Ajolote Nominal" data-id="16">
+                    <h2>Ajolote Nominal</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Ambystoma mexicanum</label>
+                    <label>€45</label>
+                </div>
+                <div class="producto" data-category="anfibios" data-type="ajolotes" data-gender="female" data-price="55">
+                    <img src="img/mascotas/anfibios/ajolotes/ajolote albino.jpg" alt="Ajolote Albino" data-id="17">
+                    <h2>Ajolote Albino</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Ambystoma mexicanum</label>
+                    <label>€55</label>
+                </div>
+                <div class="producto" data-category="anfibios" data-type="ranas" data-gender="female" data-price="60">
+                    <img src="img/mascotas/anfibios/ranas/rana arboricola.jpg" alt="Rana Arborícola" data-id="18">
+                    <h2>Rana Arborícola</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Litoria caerulea</label>
+                    <label>€60</label>
+                </div>
+                <div class="producto" data-category="anfibios" data-type="ranas" data-gender="male" data-price="65">
+                    <img src="img/mascotas/anfibios/ranas/rana flecha azul.jpg" alt="Rana Flecha Azul" data-id="19">
+                    <h2>Rana Flecha Azul</h2>
+                    <span class="gender male">♂️</span>
+                    <label>Dendrobates tinctorius</label>
+                    <label>€65</label>
+                </div>
+                <div class="producto" data-category="anfibios" data-type="ranas" data-gender="female" data-price="65">
+                    <img src="img/mascotas/anfibios/ranas/rana flecha verde.jpg" alt="Rana Flecha Verde" data-id="20">
+                    <h2>Rana Flecha Verde</h2>
+                    <span class="gender female">♀️</span>
+                    <label>Dendrobates auratus</label>
+                    <label>€65</label>
+                </div>
+            </div>
+        </section>
+
+    <!-- Sección Artrópodos -->
+<section id="artropodos" class="category-section">
+    <h1 class="titulo-categoria">Artrópodos</h1>
+    <div class="grid-productos">
+
+        <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="female" data-price="40">
+            <picture>
+                <source srcset="img/mascotas/artrópodos/araña saltarina/pexels-nietjuhart-2115608.webp" type="image/webp">
+                <source srcset="img/mascotas/artrópodos/araña saltarina/pexels-nietjuhart-2115608.jpg" type="image/jpeg">
+                <img src="img/mascotas/artrópodos/araña saltarina/pexels-nietjuhart-2115608.jpg" alt="Araña Saltarina" data-id="21">
+            </picture>
+            <h2>Araña Saltarina</h2>
+            <span class="gender female">♀️</span>
+            <label>Phidippus regius</label>
+            <label>€40</label>
+        </div>
+        
+        <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="female" data-price="75">
+            <picture>
+                <source srcset="img/mascotas/artrópodos/avicularia versicolor/pexels-aibek-skakov-418917601-20954758.webp" type="image/webp">
+                <source srcset="img/mascotas/artrópodos/avicularia versicolor/pexels-aibek-skakov-418917601-20954758.jpg" type="image/jpeg">
+                <img src="img/mascotas/artrópodos/avicularia versicolor/pexels-aibek-skakov-418917601-20954758.jpg" alt="Avicularia Versicolor" data-id="22">
+            </picture>
+            <h2>Avicularia Versicolor</h2>
+            <span class="gender female">♀️</span>
+            <label>Caribena versicolor</label>
+            <label>€75</label>
+        </div>
+        
+        <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="male" data-price="65">
+            <picture>
+                <source srcset="img/mascotas/artrópodos/tarantula brasileña/pexels-tyler-gresh-1165446157-23201014.webp" type="image/webp">
+                <source srcset="img/mascotas/artrópodos/tarantula brasileña/pexels-tyler-gresh-1165446157-23201014.jpg" type="image/jpeg">
+                <img src="img/mascotas/artrópodos/tarantula brasileña/pexels-tyler-gresh-1165446157-23201014.jpg" alt="Tarántula Brasileña" data-id="23">
+            </picture>
+            <h2>Tarántula Brasileña</h2>
+            <span class="gender male">♂️</span>
+            <label>Nhandu chromatus</label>
+            <label>€65</label>
+        </div>
+        
+        <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="female" data-price="70">
+            <picture>
+                <source srcset="img/mascotas/artrópodos/tarantula de rodillas doradas/pexels-ronja-meyer-257774864-12623121.webp" type="image/webp">
+                <source srcset="img/mascotas/artrópodos/tarantula de rodillas doradas/pexels-ronja-meyer-257774864-12623121.jpg" type="image/jpeg">
+                <img src="img/mascotas/artrópodos/tarantula de rodillas doradas/pexels-ronja-meyer-257774864-12623121.jpg" alt="Tarántula de Rodillas Doradas" data-id="24">
+            </picture>
+            <h2>Tarántula de Rodillas Doradas</h2>
+            <span class="gender female">♀️</span>
+            <label>Brachypelma smithi</label>
+            <label>€70</label>
+        </div>
+        
+        <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="male" data-price="68">
+            <picture>
+                <source srcset="img/mascotas/artrópodos/tarantula de rodillas rojas/pexels-marcusl-3234842.webp" type="image/webp">
+                <source srcset="img/mascotas/artrópodos/tarantula de rodillas rojas/pexels-marcusl-3234842.jpg" type="image/jpeg">
+                <img src="img/mascotas/artrópodos/tarantula de rodillas rojas/pexels-marcusl-3234842.jpg" alt="Tarántula de Rodillas Rojas" data-id="25">
+            </picture>
+            <h2>Tarántula de Rodillas Rojas</h2>
+            <span class="gender male">♂️</span>
+            <label>Brachypelma emilia</label>
+            <label>€68</label>
+        </div>
+        
+        <div class="producto" data-category="artropodos" data-type="aracnidos" data-gender="female" data-price="80">
+            <picture>
+                <source srcset="img/mascotas/artrópodos/tarantula morada dominicana/pexels-wwarby-19679351.webp" type="image/webp">
+                <source srcset="img/mascotas/artrópodos/tarantula morada dominicana/pexels-wwarby-19679351.jpg" type="image/jpeg">
+                <img src="img/mascotas/artrópodos/tarantula morada dominicana/pexels-wwarby-19679351.jpg" alt="Tarántula Morada Dominicana" data-id="26">
+            </picture>
+            <h2>Tarántula Morada Dominicana</h2>
+            <span class="gender female">♀️</span>
+            <label>Cyriocosmus ritae</label>
+            <label>€80</label>
+        </div>
+
+    </div>
+</section>
+
+
+
+</div>
+<!-- Agregar un contenedor para el modal que faltaba en el código original -->
+<div id="animalModal" class="modal"> <!-- Modal para mostrar detalles del animal -->
+    <div class="modal-content"> <!-- Contenido del modal -->
+        <span class="close-button">&times;</span> <!-- Botón para cerrar el modal -->
+        <div class="animal-details"> <!-- Detalles del animal -->
+            <div class="animal-image"> <!-- Imagen del animal -->
+                <img id="modal-image" src="" alt="Animal"> <!-- Imagen del animal -->
+            </div>
+            <div class="animal-info"> <!-- Información del animal -->
+                <h2 id="modal-name"></h2> <!-- Nombre del animal -->
+                <label id="modal-scientific" class="scientific-name"></label> <!-- Nombre científico del animal -->
+                <div class="price" id="modal-price"></div> <!-- Precio del animal -->
+            </div>
+        </div>
+        
+        <div class="tabs"> <!-- Pestañas para diferentes secciones del modal -->
+            <div class="tab active" data-tab="descripcion">Descripción</div>  <!-- Pestaña de descripción -->
+            <div class="tab" data-tab="habitat">Hábitat</div>  <!-- Pestaña de hábitat -->
+            <div class="tab" data-tab="cuidados">Cuidados</div> <!-- Pestaña de cuidados -->
+            <div class="tab" data-tab="tiendas">Disponibilidad</div> <!-- Pestaña de disponibilidad -->
+        </div>
+        
+        <div id="tab-descripcion" class="tab-content active"> <!-- Contenido de la pestaña de descripción -->
+            <label id="modal-description"></label> <!-- Descripción del animal -->
+        </div> 
+        
+        <div id="tab-habitat" class="tab-content"> <!-- Contenido de la pestaña de hábitat -->
+            <div class="habitat-info"> <!-- Información de hábitat -->
+                <h3>Requerimientos de hábitat</h3> <!-- Título de la sección de hábitat -->
+                <label id="modal-habitat"></label> <!-- Requerimientos de hábitat -->
+            </div>
+        </div>
+        
+        <div id="tab-cuidados" class="tab-content"> <!-- Contenido de la pestaña de cuidados -->
+            <div class="care-info"> <!-- Información de cuidados -->
+                <h3>Cuidados requeridos</h3> <!-- Título de la sección de cuidados -->
+                <label id="modal-care"></label> <!-- Cuidados requeridos -->
+            </div>
+        </div>
+        
+        <div id="tab-tiendas" class="tab-content"> <!-- Contenido de la pestaña de disponibilidad -->
+            <div class="store-info"> <!-- Información de disponibilidad -->
+                <h3>Disponibilidad en tiendas</h3> <!-- Título de la sección de disponibilidad -->
+                <div id="modal-stores"></div> <!-- Tiendas donde está disponible el animal -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <label>&copy; 2025 Scales - Animales Exóticos. Todos los derechos reservados.</label>
+</footer>
+
+<script src="js/filtrado.js"></script> <!-- Script para el filtrado de productos -->
+<script src="js/responsive.js"></script> <!-- Script para la responsividad de la página -->
+<script src="js/carrito.js"></script> <!-- Script para el carrito de compras -->
+<script src="js/favoritos.js"></script> <!-- Script para el sistema de favoritos -->
+
+    </body>
+</html>

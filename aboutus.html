@@ -1,0 +1,225 @@
+<!--
+    Archivo: aboutus.html
+    Descripción: Página de la categoría Sobre Nosotros en el sitio web de Scalix.
+    Autor: Sara Iglesias
+    Fecha: 29/03/25
+    Versión: 1.0
+    Fecha de Modificación: [23/04/2025]
+
+-->
+
+<!--
+    Este es el archivo HTML principal de la tienda online "Scalix", especializada en mascotas exóticas.
+    Contiene la estructura básica del sitio, incluyendo encabezado, navegación, secciones de contenido,
+    carrusel de imágenes y pie de página. -->
+
+    <!DOCTYPE html>  <!--Tipo de documento-->
+    <html lang="es"> <!--Idioma-->
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Sobre Nosotros - Scalix</title> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/aboutus.css">
+    </head>
+    <body>
+        <!-- Header con navegación -->
+        <header>
+            <div class="logo"><img src="img/logo/SCALIX1.png" alt="Scalix Logo" /></div>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <nav id="mainNav" class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="animales.html">Mascotas</a></li>
+                    <li><a href="comida.html">Comida</a></li>
+                    <li><a href="aboutus.html">Sobre Nosotros</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="carrito.html" class="cart-icon">🛒</a>
+                <span class="cart-count">0</span>
+                <a href="#" class="profile-icon">
+                    <img src="img/profile.jpg" alt="usuario" id="userMenuBtn">
+                </a>
+            </div>
+        </header>
+
+    <!-- Hero Section --> 
+    <section class="hero">
+        <div class="decorative-element element-1"></div> <!-- Elemento decorativo -->
+        <div class="decorative-element element-2"></div> <!-- Elemento decorativo -->
+        <h1>Sobre Nosotros</h1>
+        <label>Somos expertos comprometidos con la venta responsable de animales exóticos, cuidando cada especie y asesorando a nuestros clientes.</label> <!-- Descripción de la tienda -->
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section"> <!-- Sección del equipo -->
+        <h2 class="team-title">Nuestro Equipo de Expertos</h2> <!-- Título de la sección del equipo -->
+        <div class="team-grid"> <!-- Grid que gestiona como se ve el equipo -->
+            <div class="team-member"> <!-- Miembro del equipo -->
+                <picture>
+                    <img src="img/especialistas/espe2.jpg" alt="Veterinario Especializado en Reptiles" > 
+                    <source srcset="img/especialistas/espe2.jpg" media="(min-width: 800px)">
+                </picture>
+                <div class="team-info"> <!-- Información del miembro del equipo -->
+                    <h3>Ana García</h3> <!-- Nombre del miembro del equipo -->
+                    <label>Especialista en Reptiles</label> <!-- Especialidad del miembro del equipo -->
+                </div>
+            </div>
+            <div class="team-member"> <!-- Miembro del equipo -->
+                <picture>
+                    <img src="img/especialistas/espe1.jpg" alt="Veterinario Especializado" >    <!-- Imagen del miembro del equipo -->
+                    <source srcset="img/especialistas/espe1.webp" media="(min-width: 800px)"> <!-- Imagen alternativa para pantallas más grandes -->
+                </picture>
+                <div class="team-info"> <!-- Información del miembro del equipo -->
+                    <h3>Carlos Ruiz</h3>
+                    <label>Veterinario Especializado</label> <!-- Especialidad del miembro del equipo -->
+                </div>
+            </div>
+            <div class="team-member"> <!-- Miembro del equipo -->
+                <picture> 
+                    <img src="img/especialistas/habitat.jpg" alt="Experta en Hábitats" >
+                    <source srcset="img/especialistas/habitat.webp" media="(min-width: 800px)">
+                </picture>
+                    <div class="team-info">
+                    <h3>Laura Méndez</h3>
+                    <label>Experta en Hábitats</label>
+                </div>
+            </div>
+            <div class="team-member"> <!-- Miembro del equipo -->
+                <picture>
+                    <img src="img/especialistas/asesor.jpg" alt="Asesor de Clientes" >
+                    <source srcset="img/especialistas/asesor.webp" media="(min-width: 800px)">
+                </picture>
+                <div class="team-info">
+                    <h3>Miguel Torres</h3>
+                    <label>Asesor de Clientes</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="content-section gray-bg"> <!-- Sección de misión -->
+        <div class="content-text"> <!-- Texto de la sección de misión -->
+            <h2>Nuestra Misión</h2> <!-- Título de la sección de misión -->
+            <label>En Scalix, nos dedicamos a la venta responsable de animales exóticos, garantizando el bienestar de cada especie.</label> <!-- Descripción de la misión -->
+            <label>Nuestro compromiso es ofrecer asesoría profesional y un trato ético, asegurándonos de que cada animal se integre en un ambiente adecuado y con el cuidado que merece.</label>
+            <label>Trabajamos con proveedores de confianza y seguimos normativas internacionales para asegurar la calidad y el bienestar de nuestros animales.</label>
+            <label>Nos esforzamos por educar a nuestros clientes sobre la tenencia responsable y el cuidado de los animales exóticos, promoviendo la conservación y el respeto hacia la fauna.</label>
+        </div>
+        <div class="content-image">
+            <picture></picture>
+                <img src="img/especialistas/vet1.jpg" alt="Misión de Scalix" >
+                <source srcset="img/especialistas/vet1.webp" media="(min-width: 800px)">
+            </picture>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="content-section light-bg"> <!-- Sección de valores -->
+        <div class="content-image">
+            <picture>
+                <img src="img/especialistas/valores.jpg" alt="Valores de Scalix" >
+                <source srcset="img/especialistas/valores.webp" media="(min-width: 800px)">
+            </picture>
+        </div>
+        <div class="content-text"> <!-- Texto de la sección de valores -->
+            <h2>Valores y Compromiso</h2>
+            <label>Creemos en la conservación y el respeto hacia la fauna exótica. Nuestro equipo se forma con profesionales apasionados por la biodiversidad y el bienestar animal.<label>
+            <label>Ofrecemos solo productos y servicios que cumplen con normativas internacionales y estándares de calidad, trabajando de la mano con centros especializados y veterinarios.</label>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="content-section gray-bg"> <!-- Sección de servicios -->
+        <div class="content-text">
+            <h2>Nuestro Servicio</h2> <!-- Título de la sección de servicios -->
+            <label>Además de ofrecer una amplia variedad de animales exóticos, brindamos asesoría personalizada, acompañamiento en el proceso de adquisición y seguimiento post-venta.</label>
+            <label>Nos esforzamos por construir relaciones duraderas basadas en la confianza, la ética y la transparencia con cada uno de nuestros clientes.</label>
+        </div>
+        <div class="content-image">
+            <picture>
+                <img src="img/especialistas/servicio.jpg" alt="Servicio de Scalix" >
+                <source srcset="img/especialistas/servicio.webp" media="(min-width: 800px)">
+            </picture>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section"> <!-- Sección de características -->
+        <h2 class="features-title">¿Por qué elegirnos?</h2> <!-- Título de la sección de características -->
+        <div class="features-grid"> <!-- Grid que gestiona como se ve las características -->
+            <div class="feature-card">              <!-- Tarjeta de característica -->
+                <div class="feature-icon">             <!-- Icono de característica -->
+                    <i class="fas fa-user-tie"></i> <!-- Icono de profesionalismo -->
+                </div>
+                <h3>Equipo Profesional</h3>
+                <label>Expertos en fauna exótica con años de experiencia en el sector.</label>
+            </div>
+            <div class="feature-card">            <!-- Tarjeta de característica -->
+                <div class="feature-icon">            <!-- Icono de característica -->
+                    <i class="fas fa-heart"></i> <!-- Icono de compromiso -->
+                </div>
+                <h3>Responsabilidad</h3>
+                <label>Comprometidos con el bienestar animal y la educación de nuestros clientes.</label>
+            </div>
+            <div class="feature-card">             <!-- Tarjeta de característica -->
+                <div class="feature-icon">           <!-- Icono de característica -->
+                    <i class="fas fa-medal"></i> <!-- Icono de calidad -->
+                </div>
+                <h3>Calidad y Ética</h3>
+                <label>Solo trabajamos con estándares internacionales y proveedores confiables.</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section"> <!-- Sección de contacto -->
+        <h2 class="contact-title">Contáctanos</h2> <!-- Título de la sección de contacto -->
+        <div class="contact-info">
+            <div class="contact-item"> <!-- Información de contacto -->
+                <i class="fas fa-envelope"></i> <!-- Icono de correo electrónico -->
+                <label>info@Scalixexotico.com</label> <!-- Correo electrónico de contacto -->
+            </div>
+            <div class="contact-item"> <!-- Información de contacto -->
+                <i class="fab fa-whatsapp"></i> <!-- Icono de WhatsApp -->
+                <label>+34 600 123 456</label>  <!-- Número de WhatsApp de contacto -->
+            </div>
+            <div class="contact-item"> <!-- Información de contacto -->
+                <i class="fas fa-phone"></i> <!-- Icono de teléfono -->
+                <label>+34 910 654 321</label>  <!-- Número de teléfono de contacto -->
+            </div>
+        </div>
+        <div class="contact-buttons">
+            <a href="https://wa.me/1234567890" class="contacto-btn whatsapp">WhatsApp</a>   <!-- Botón de WhatsApp -->
+            <a href="cita.html" class="btn btn-outline">Agendar cita</a> <!-- Botón para agendar cita -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Inicio</a> <!-- Enlace a la página de inicio -->
+            <a href="animales.html">Mascotas</a> <!-- Enlace a la página de mascotas -->
+            <a href="cuidados.html">Cuidados</a> <!-- Enlace a la página de cuidados -->
+            <a href="politica-privacidad.html">Política de Privacidad</a> <!-- Enlace a la política de privacidad -->
+        </div>
+        <div class="social-icons"> <!-- Iconos de redes sociales -->
+            <a href="#"><i class="fab fa-facebook"></i></a> <!-- Enlace a Facebook -->
+            <a href="#"><i class="fab fa-instagram"></i></a> <!-- Enlace a Instagram -->
+            <a href="#"><i class="fab fa-youtube"></i></a> <!-- Enlace a YouTube -->
+            <a href="#"><i class="fab fa-tiktok"></i></a> <!-- Enlace a TikTok -->
+            <a href="#"><i class="fab fa-twitter"></i></a> <!-- Enlace a Twitter -->
+        </div>
+        <label class="copyright">&copy; 2025 Scalix - Animales Exóticos. Todos los derechos reservados.</label> <!-- Derechos de autor -->
+    </footer>
+    <!-- Scripts -->
+    <script src="js/auth.js"></script> <!-- Script para autenticación de usuario -->
+    <script src="js/cuenta.js"></script> <!-- Script para gestión de cuenta de usuario -->
+    <script src="js/responsive.js"></script> <!-- Script para diseño responsivo -->
+    <script src="js/carrito.js"></script> <!-- Script para gestión del carrito de compras -->
+
+</body>
+</html>

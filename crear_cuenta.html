@@ -1,0 +1,102 @@
+
+<!--
+    Archivo: crear_cuenta.html
+    Descripción: Página para crear una cuenta de usuario en la tienda online "Scalix", especializada en mascotas exóticas.
+    Contiene información sobre el usuario, como nombre, apellido, email, teléfono, ubicación y biografía.
+    Autor: Sara Iglesias
+    Fecha: 27/03/25
+    Versión: 1.0    
+    Fecha de Modificación: [23/04/2025]
+-->
+<!-- 
+    Este archivo HTML representa la página de creación de cuenta de un sitio web de comercio electrónico.
+    Incluye un formulario para que los usuarios ingresen su información personal y creen una cuenta.
+    El diseño es responsivo y se adapta a diferentes tamaños de pantalla.
+    Incluye enlaces a archivos CSS y JavaScript para el estilo y la funcionalidad.
+-->
+
+
+<!DOCTYPE html> <!-- Declaración del tipo de documento HTML5 -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configuración de la vista para dispositivos móviles -->
+    <title>Crear Cuenta</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cuenta.css"> <!-- Enlace al archivo CSS para estilos -->
+</head> 
+<body> <!-- Cuerpo de la página -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="img/logo/SCALIX1.png" alt="Scalix">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="animales.html">Mascotas</a></li>
+                    <li><a href="comida.html">Comida</a></li>
+                    <li><a href="aboutus.html">Sobre Nosotros</a></li>
+                </ul>
+            </nav>
+            <div class="user-menu">
+                <a href="carrito.html">🛒</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="account-container"> <!-- Contenedor principal de la cuenta -->
+        <aside class="sidebar"> <!-- Barra lateral de navegación -->
+            <img src="img/profile.jpg" alt="Foto Perfil Prederterminada" class="profile-img"> <!-- Imagen de perfil predeterminada -->
+            <h2>Nick Name</h2> <!-- Nombre del usuario -->
+            <label>@yourNickName</label> <!-- Nombre de usuario de la pagina-->
+            <ul> <!-- Lista de enlaces de navegación no creados pero con posible implementación-->
+                <li><a href="#" class="active">Account Settings</a></li> <!-- Enlace a la configuración de la cuenta -->
+                <li><a href="#">Password</a></li> <!-- Enlace a la configuración de contraseña -->
+                <li><a href="#">Security & Privacy</a></li> <!-- Enlace a la configuración de seguridad y privacidad -->
+                <li><a href="#">Application</a></li> <!-- Enlace a la configuración de la aplicación -->
+                <li><a href="#">Notification</a></li> <!-- Enlace a la configuración de notificaciones -->
+            </ul>
+        </aside>
+
+        <main class="account-settings"> <!-- Sección principal de configuración de la cuenta -->
+            <h1>Crear cuenta</h1>
+            <form>
+                <div class="input-group"> <!-- Grupo de entrada para el nombre -->
+                    <label>Nombre</label> <!-- Etiqueta para el campo de nombre -->
+                    <input type="text" name="nombre" placeholder="Tu nombre" required> <!-- Campo de entrada para el nombre -->
+                </div>
+                <div class="input-group"> <!-- Grupo de entrada para el apellido -->
+                    <label>Apellido</label> <!-- Etiqueta para el campo de apellido -->
+                    <input type="text" name="apellido" placeholder="Tus apellidos" required> <!-- Campo de entrada para el apellido -->
+                </div> 
+                <div class="input-group"> <!-- Grupo de entrada para el email -->
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="tu@email.com" required> <!-- Campo de entrada para el email -->
+                </div>
+                <div class="input-group"> <!-- Grupo de entrada para el teléfono -->
+                    <label>Teléfono</label> <!-- Etiqueta para el campo de teléfono -->
+                    <input type="tel" name="telefono" placeholder="999 999 999"> <!-- Campo de entrada para el teléfono -->
+                </div>
+                <div class="input-group"> <!-- Grupo de entrada para la ubicación -->
+                    <label>Ubicación</label> <!-- Etiqueta para el campo de ubicación -->
+                    <input type="text" name="ubicacion" placeholder="Ciudad"> <!-- Campo de entrada para la ubicación -->
+                </div>
+                <div class="input-group"> <!-- Grupo de entrada para la biografía -->
+                    <label>Biografía</label> <!-- Etiqueta para el campo de biografía -->
+                    <textarea name="bio" placeholder="Escribe algo sobre ti..."></textarea> <!-- Campo de entrada para la biografía -->
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="btn primary">Crear cuenta</button> <!-- Botón para actualizar la cuenta -->
+                    <button type="button" id="cancel-btn" class="btn secondary" onclick="window.location.href='index.html'">Cancelar</button> <!-- Botón para cancelar y volver a la página principal -->
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="js/cuenta.js"></script> <!-- Llamamos al JavaScript -->
+    <script src="js/auth.js"></script> <!-- Llamamos al JavaScript de autenticación -->
+    <script src="js/responsive.js"></script> <!-- Llamamos al JavaScript responsivo -->
+
+</body>
+</html>
